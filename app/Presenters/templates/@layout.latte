@@ -19,6 +19,11 @@
 </head>
 
 <body>
+	<header>
+		<ul n:foreach="$menu as $item">
+			<li><a n:href="Games:list $item->category_url">{$item->category_title}</a></li>
+		</ul>
+	</header>
 	<div class=container>
 		<div n:foreach="$flashes as $flash" n:class="alert, 'alert-' . $flash->type">{$flash->message}</div>
 

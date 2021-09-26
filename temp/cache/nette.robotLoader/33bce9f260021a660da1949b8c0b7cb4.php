@@ -17,10 +17,20 @@ return array (
       0 => '/var/www/sites/projekt1/app/Model/UserFacade.php',
       1 => 1631089707,
     ),
+    'App\\Model\\DatabaseFunctions' => 
+    array (
+      0 => '/var/www/sites/projekt1/app/Model/DatabaseFunctions.php',
+      1 => 1632659118,
+    ),
     'App\\Bootstrap' => 
     array (
       0 => '/var/www/sites/projekt1/app/Bootstrap.php',
       1 => 1631089707,
+    ),
+    'App\\Model\\GamesManager' => 
+    array (
+      0 => '/var/www/sites/projekt1/app/SitesModule/Module/GamesManager.php',
+      1 => 1632600559,
     ),
     'App\\Forms\\FormFactory' => 
     array (
@@ -40,7 +50,7 @@ return array (
     'App\\Router\\RouterFactory' => 
     array (
       0 => '/var/www/sites/projekt1/app/Router/RouterFactory.php',
-      1 => 1631089707,
+      1 => 1632600559,
     ),
     'App\\Presenters\\ErrorPresenter' => 
     array (
@@ -62,19 +72,25 @@ return array (
       0 => '/var/www/sites/projekt1/app/Presenters/BasePresenter.php',
       1 => 1631089707,
     ),
+    'App\\Presenters\\GamesPresenter' => 
+    array (
+      0 => '/var/www/sites/projekt1/app/Presenters/GamesPresenter.php',
+      1 => 1632659500,
+    ),
     'App\\Presenters\\HomepagePresenter' => 
     array (
       0 => '/var/www/sites/projekt1/app/Presenters/HomepagePresenter.php',
-      1 => 1631089707,
+      1 => 1632657073,
     ),
   ),
   1 => 
   array (
-    'App\\Presenters\\HomepageDefaultTemplate' => 1,
-    'App\\Presenters\\HomepageTemplate' => 1,
+    'App\\Presenters\\HomepageDefaultTemplate' => 3,
+    'App\\Presenters\\HomepageTemplate' => 3,
+    'App\\Presenters\\GamesListTemplate' => 3,
+    'App\\Presenters\\GamesTemplate' => 3,
   ),
   2 => 
   array (
-    '/var/www/sites/projekt1/app/SitesModule/Module/GamesManager.php' => 1631820429,
   ),
 );

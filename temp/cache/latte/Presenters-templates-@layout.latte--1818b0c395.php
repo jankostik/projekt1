@@ -43,24 +43,39 @@ final class Template1818b0c395 extends Latte\Runtime\Template
 </head>
 
 <body>
+	<header>
+';
+		$iterations = 0;
+		foreach ($menu as $item) /* line 23 */ {
+			echo '		<ul>
+			<li><a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$item->category_url])) /* line 24 */;
+			echo '">';
+			echo LR\Filters::escapeHtmlText($item->category_title) /* line 24 */;
+			echo '</a></li>
+		</ul>
+';
+			$iterations++;
+		}
+		echo '	</header>
 	<div class=container>
 ';
 		$iterations = 0;
-		foreach ($flashes as $flash) /* line 23 */ {
+		foreach ($flashes as $flash) /* line 28 */ {
 			echo '		<div';
-			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 23 */;
+			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 28 */;
 			echo '>';
-			echo LR\Filters::escapeHtmlText($flash->message) /* line 23 */;
+			echo LR\Filters::escapeHtmlText($flash->message) /* line 28 */;
 			echo '</div>
 ';
 			$iterations++;
 		}
 		echo "\n";
-		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 25 */;
+		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 30 */;
 		echo '	</div>
 
 ';
-		$this->renderBlock('scripts', get_defined_vars()) /* line 28 */;
+		$this->renderBlock('scripts', get_defined_vars()) /* line 33 */;
 		echo '
 </body>
 </html>
@@ -73,7 +88,7 @@ final class Template1818b0c395 extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['flash' => '23'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['item' => '23', 'flash' => '28'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -90,7 +105,7 @@ final class Template1818b0c395 extends Latte\Runtime\Template
 	}
 
 
-	/** {block scripts} on line 28 */
+	/** {block scripts} on line 33 */
 	public function blockScripts(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -99,7 +114,7 @@ final class Template1818b0c395 extends Latte\Runtime\Template
 		echo '	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 	<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 31 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 36 */;
 		echo '/js/main.js"></script>
 ';
 	}

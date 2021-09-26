@@ -16,9 +16,9 @@ session:
 
 
 database:
-	dsn: 'mysql:host=127.0.0.1;dbname=test'
-	user:
-	password:
+	dsn: 'mysql:host=127.0.0.1;dbname=offline_zabava'
+	user: root
+	password: Bl10_10Ji
 	options:
 		lazy: yes
 
@@ -29,3 +29,4 @@ services:
 	- App\Forms\SignInFormFactory
 	- App\Forms\SignUpFormFactory
 	- App\Router\RouterFactory::createRouter
+	- App\Model\DatabaseFunctions
