@@ -1,5 +1,6 @@
 {{block content}
 <ul n:foreach="$gamesList as $game">
-	<li><a href="#">{$game->game_title}</a></li>
+	<li><a n:href="Games:show $game->game_url">{$game->game_title}</a></li>
+	<li><strong>{$game->game_description}</strong></li>
 </ul>
-{/block}}
+{/block}

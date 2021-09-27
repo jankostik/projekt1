@@ -26,4 +26,9 @@ class GamesPresenter extends BasePresenter
     {
         $this->template->gamesList = $this->databaseFunctions->getGamesByCategory($category_url);
     }
+
+    public function renderShow($game_url)
+    {
+        $this->template->game = $this->databaseFunctions->getGame($game_url);
+    }
 }

@@ -18,7 +18,6 @@ final class Templated8f7e921b1 extends Latte\Runtime\Template
 			return get_defined_vars();
 		}
 		$this->renderBlock('content', get_defined_vars()) /* line 1 */;
-		echo '}';
 		return get_defined_vars();
 	}
 
@@ -45,9 +44,14 @@ final class Templated8f7e921b1 extends Latte\Runtime\Template
 		$iterations = 0;
 		foreach ($gamesList as $game) /* line 2 */ {
 			echo '<ul>
-	<li><a href="#">';
+	<li><a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:show", [$game->game_url])) /* line 3 */;
+			echo '">';
 			echo LR\Filters::escapeHtmlText($game->game_title) /* line 3 */;
 			echo '</a></li>
+	<li><strong>';
+			echo LR\Filters::escapeHtmlText($game->game_description) /* line 4 */;
+			echo '</strong></li>
 </ul>
 ';
 			$iterations++;

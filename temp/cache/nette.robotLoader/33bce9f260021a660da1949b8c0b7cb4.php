@@ -20,7 +20,7 @@ return array (
     'App\\Model\\DatabaseFunctions' => 
     array (
       0 => '/var/www/sites/projekt1/app/Model/DatabaseFunctions.php',
-      1 => 1632659118,
+      1 => 1632660710,
     ),
     'App\\Bootstrap' => 
     array (
@@ -75,7 +75,7 @@ return array (
     'App\\Presenters\\GamesPresenter' => 
     array (
       0 => '/var/www/sites/projekt1/app/Presenters/GamesPresenter.php',
-      1 => 1632659500,
+      1 => 1632744510,
     ),
     'App\\Presenters\\HomepagePresenter' => 
     array (
@@ -89,6 +89,7 @@ return array (
     'App\\Presenters\\HomepageTemplate' => 3,
     'App\\Presenters\\GamesListTemplate' => 3,
     'App\\Presenters\\GamesTemplate' => 3,
+    'App\\Presenters\\GamesShowTemplate' => 3,
   ),
   2 => 
   array (
