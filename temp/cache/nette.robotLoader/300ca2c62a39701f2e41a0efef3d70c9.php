@@ -62,6 +62,11 @@ return array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/ErrorPresenter.php',
       1 => 1631089707,
     ),
+    'App\\Presenters\\MenuPresenter' => 
+    array (
+      0 => '/var/www/sites/Nette/projekt1/app/Presenters/MenuPresenter.php',
+      1 => 1633172954,
+    ),
     'App\\Presenters\\Error4xxPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/Error4xxPresenter.php',
@@ -75,17 +80,17 @@ return array (
     'App\\Presenters\\BasePresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/BasePresenter.php',
-      1 => 1631089707,
+      1 => 1633170510,
     ),
     'App\\Presenters\\GamesPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/GamesPresenter.php',
-      1 => 1633104748,
+      1 => 1633173260,
     ),
     'App\\Presenters\\HomepagePresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/HomepagePresenter.php',
-      1 => 1632657073,
+      1 => 1633173468,
     ),
   ),
   1 => 
@@ -99,6 +104,7 @@ return array (
     'App\\Presenters\\HomepageContactTemplate' => 3,
     'App\\Presenters\\ContactDefaultTemplate' => 3,
     'App\\Presenters\\ContactTemplate' => 3,
+    'App\\Presenters\\DatabaseFunctions' => 3,
   ),
   2 => 
   array (
