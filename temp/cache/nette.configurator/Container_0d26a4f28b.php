@@ -89,6 +89,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 		'Nette\Application\Routers\RouteList' => [['05']],
 		'App\Model\DatabaseManager' => [['06']],
 		'App\Model\DatabaseFunctions' => [['06']],
+		'App\Presenters\MenuPresenter' => [2 => ['07', 'application.2', 'application.5', 'application.6']],
 		'App\Presenters\BasePresenter' => [
 			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
 		],
@@ -107,21 +108,6 @@ class Container_0d26a4f28b extends Nette\DI\Container
 		'Nette\ComponentModel\Component' => [
 			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
 		],
-		'Nette\ComponentModel\IComponent' => [
-			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
-		],
-		'Nette\ComponentModel\IContainer' => [
-			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
-		],
-		'Nette\Application\UI\SignalReceiver' => [
-			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
-		],
-		'Nette\Application\UI\StatePersistent' => [
-			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
-		],
-		'Nette\Application\UI\Renderable' => [
-			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
-		],
 		'Nette\Application\IPresenter' => [
 			2 => [
 				'07',
@@ -135,9 +121,23 @@ class Container_0d26a4f28b extends Nette\DI\Container
 				'application.8',
 			],
 		],
+		'Nette\Application\UI\Renderable' => [
+			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
+		],
+		'Nette\Application\UI\StatePersistent' => [
+			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
+		],
+		'Nette\Application\UI\SignalReceiver' => [
+			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
+		],
+		'Nette\ComponentModel\IContainer' => [
+			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
+		],
+		'Nette\ComponentModel\IComponent' => [
+			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
+		],
 		'App\Presenters\ContactPresenter' => [2 => ['07']],
 		'App\Presenters\ErrorPresenter' => [2 => ['application.1']],
-		'App\Presenters\MenuPresenter' => [2 => ['application.2', 'application.6']],
 		'App\Presenters\Error4xxPresenter' => [2 => ['application.3']],
 		'App\Presenters\SignPresenter' => [2 => ['application.4']],
 		'App\Presenters\GamesPresenter' => [2 => ['application.5']],
@@ -202,7 +202,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 
 	public function createService07(): App\Presenters\ContactPresenter
 	{
-		$service = new App\Presenters\ContactPresenter('jan.kostik5@gmail.com', $this->getService('mail.mailer'), $this->getService('06'));
+		$service = new App\Presenters\ContactPresenter('jan.kostik5@gmail.com');
 		$service->injectPrimary(
 			$this,
 			$this->getService('application.presenterFactory'),

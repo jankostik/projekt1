@@ -10,7 +10,7 @@ use App\Model\DatabaseFunctions;
 class MenuPresenter extends BasePresenter
 {
 
-	private $databaseFunctions;
+	protected $databaseFunctions;
 
 	public function __construct(DatabaseFunctions $databaseFunctions)
 	 {

@@ -4,35 +4,29 @@ declare(strict_types=1);
 
 namespace App\Presenters;
 
-use App\Presenters\BasePresenter;
+use App\Presenters\MenuPresenter;
 use Nette\Application\UI\Form;
 use Nette\Mail\Mailer;
 use Nette\Mail\Message;
 use Nette\Mail\SendException;
 use Nette\Utils\ArrayHash;
-use App\Model\DatabaseFunctions;
 
-class ContactPresenter extends BasePresenter
+
+class ContactPresenter extends MenuPresenter
 {
 
-    private string $contactEmail;
+   /* private string $contactEmail;
 
     private Mailer $mailer;
 
-    private $databaseFunctions;
 
-    public function __construct(string $contactEmail, Mailer $mailer, databaseFunctions $databaseFunctions)
+    public function __construct(string $contactEmail, Mailer $mailer)
     {
-        parent::__construct();
         $this->contactEmail = $contactEmail;
         $this->mailer = $mailer;
-        $this->databaseFunctions = $databaseFunctions;
+        
     }
 
-    public function beforeRender()
-	{
-		$this->template->menu = $this->databaseFunctions->getCategories();
-	}
 
     protected function createComponentContactForm()
     {
@@ -62,5 +56,5 @@ class ContactPresenter extends BasePresenter
         };
 
         return $form;
-    }
+    }*/
 }
