@@ -18,6 +18,7 @@ class MenuPresenter extends BasePresenter
 		 $this->databaseFunctions = $databaseFunctions;
 	 }
 
+	 //vykreslí menu
 	public function beforeRender()
 	{
 		$this->template->menu = $this->databaseFunctions->getCategories();

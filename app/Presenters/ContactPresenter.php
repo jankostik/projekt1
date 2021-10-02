@@ -15,16 +15,16 @@ use Nette\Utils\ArrayHash;
 class ContactPresenter extends MenuPresenter
 {
 
-   /* private string $contactEmail;
+    private string $contactEmail;
 
     private Mailer $mailer;
 
 
     public function __construct(string $contactEmail, Mailer $mailer)
     {
+        
         $this->contactEmail = $contactEmail;
         $this->mailer = $mailer;
-        
     }
 
 
@@ -56,5 +56,5 @@ class ContactPresenter extends MenuPresenter
         };
 
         return $form;
-    }*/
+    }
 }

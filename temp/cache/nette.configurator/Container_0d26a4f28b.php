@@ -202,7 +202,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 
 	public function createService07(): App\Presenters\ContactPresenter
 	{
-		$service = new App\Presenters\ContactPresenter('jan.kostik5@gmail.com');
+		$service = new App\Presenters\ContactPresenter('jan.kostik5@gmail.com', $this->getService('mail.mailer'));
 		$service->injectPrimary(
 			$this,
 			$this->getService('application.presenterFactory'),
