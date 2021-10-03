@@ -11,9 +11,8 @@ class GamesPresenter extends BasePresenter
 
     private $databaseFunctions;
 
-    public function __construct(databaseFunctions $databaseFunctions)
+    public function injectDatabaseFunctions(DatabaseFunctions $databaseFunctions) :void
     {
-        parent::__construct();
         $this->databaseFunctions = $databaseFunctions;
     }
 

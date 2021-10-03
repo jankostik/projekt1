@@ -253,7 +253,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 
 	public function createServiceApplication__4(): App\Presenters\GamesPresenter
 	{
-		$service = new App\Presenters\GamesPresenter($this->getService('06'));
+		$service = new App\Presenters\GamesPresenter;
 		$service->injectPrimary(
 			$this,
 			$this->getService('application.presenterFactory'),
@@ -264,6 +264,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 			$this->getService('security.user'),
 			$this->getService('latte.templateFactory')
 		);
+		$service->injectDatabaseFunctions($this->getService('06'));
 		$service->invalidLinkMode = 5;
 		return $service;
 	}
@@ -271,7 +272,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 
 	public function createServiceApplication__5(): App\Presenters\HomepagePresenter
 	{
-		$service = new App\Presenters\HomepagePresenter($this->getService('06'));
+		$service = new App\Presenters\HomepagePresenter;
 		$service->injectPrimary(
 			$this,
 			$this->getService('application.presenterFactory'),
@@ -282,6 +283,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 			$this->getService('security.user'),
 			$this->getService('latte.templateFactory')
 		);
+		$service->injectDatabaseFunctions($this->getService('06'));
 		$service->invalidLinkMode = 5;
 		return $service;
 	}

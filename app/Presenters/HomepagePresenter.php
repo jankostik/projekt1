@@ -10,13 +10,12 @@ use App\Model\DatabaseFunctions;
 final class HomepagePresenter extends BasePresenter
 {
 
-	private $databaseFunctions;
+	protected $databaseFunctions;
 
-	public function __construct(DatabaseFunctions $databaseFunctions)
-	 {
-		 parent::__construct();
-		 $this->databaseFunctions = $databaseFunctions;
-	 }
+	public function injectDatabaseFunctions(DatabaseFunctions $databaseFunctions) :void
+    {
+        $this->databaseFunctions = $databaseFunctions;
+    }
 
 	public function beforeRender()
 	{
