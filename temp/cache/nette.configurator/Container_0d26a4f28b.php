@@ -193,7 +193,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 
 	public function createService07(): App\Presenters\ContactPresenter
 	{
-		$service = new App\Presenters\ContactPresenter('jan.kostik5@gmail.com', $this->getService('mail.mailer'), $this->getService('06'));
+		$service = new App\Presenters\ContactPresenter('jan.kostik5@gmail.com', $this->getService('mail.mailer'));
 		$service->injectPrimary(
 			$this,
 			$this->getService('application.presenterFactory'),
@@ -204,6 +204,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 			$this->getService('security.user'),
 			$this->getService('latte.templateFactory')
 		);
+		$service->injectDatabaseFunctions($this->getService('06'));
 		$service->invalidLinkMode = 5;
 		return $service;
 	}
@@ -228,6 +229,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 			$this->getService('security.user'),
 			$this->getService('latte.templateFactory')
 		);
+		$service->injectDatabaseFunctions($this->getService('06'));
 		$service->invalidLinkMode = 5;
 		return $service;
 	}
@@ -246,6 +248,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 			$this->getService('security.user'),
 			$this->getService('latte.templateFactory')
 		);
+		$service->injectDatabaseFunctions($this->getService('06'));
 		$service->invalidLinkMode = 5;
 		return $service;
 	}

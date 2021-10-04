@@ -55,12 +55,17 @@ return array (
     'App\\Presenters\\ContactPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/ContactPresenter.php',
-      1 => 1633284833,
+      1 => 1633342593,
     ),
     'App\\Presenters\\ErrorPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/ErrorPresenter.php',
       1 => 1631089707,
+    ),
+    'App\\Presenters\\Traits\\Menu' => 
+    array (
+      0 => '/var/www/sites/Nette/projekt1/app/Presenters/Traits/Menu.php',
+      1 => 1633342640,
     ),
     'App\\Presenters\\Error4xxPresenter' => 
     array (
@@ -75,17 +80,17 @@ return array (
     'App\\Presenters\\BasePresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/BasePresenter.php',
-      1 => 1633170510,
+      1 => 1633341644,
     ),
     'App\\Presenters\\GamesPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/GamesPresenter.php',
-      1 => 1633289509,
+      1 => 1633342372,
     ),
     'App\\Presenters\\HomepagePresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/HomepagePresenter.php',
-      1 => 1633285048,
+      1 => 1633341509,
     ),
   ),
   1 => 
@@ -102,5 +107,6 @@ return array (
   ),
   2 => 
   array (
+    '/var/www/sites/Nette/projekt1/app/Model/MenuTrait.php' => 1633330896,
   ),
 );

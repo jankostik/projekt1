@@ -9,17 +9,18 @@ use App\Model\DatabaseFunctions;
 class GamesPresenter extends BasePresenter
 {
 
-    private $databaseFunctions;
+    use Traits\Menu;
 
-    public function injectDatabaseFunctions(DatabaseFunctions $databaseFunctions) :void
+
+    /*public function injectDatabaseFunctions(DatabaseFunctions $databaseFunctions) :void
     {
         $this->databaseFunctions = $databaseFunctions;
     }
 
-    public function beforeRender()
+    /*public function beforeRender()
 	{
 		$this->template->menu = $this->databaseFunctions->getCategories();
-	}
+	}*/
     
     public function renderList($category_url)
     {

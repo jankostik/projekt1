@@ -19,20 +19,15 @@ class ContactPresenter extends BasePresenter
 
     private Mailer $mailer;
 
-    private $databaseFunctions;
-
-    public function __construct(string $contactEmail, Mailer $mailer, databaseFunctions $databaseFunctions)
+    
+    public function __construct(string $contactEmail, Mailer $mailer)
     {
-        parent::__construct();
+       
         $this->contactEmail = $contactEmail;
         $this->mailer = $mailer;
-        $this->databaseFunctions = $databaseFunctions;
     }
 
-    public function beforeRender()
-	{
-		$this->template->menu = $this->databaseFunctions->getCategories();
-	}
+   
 
     protected function createComponentContactForm()
     {
