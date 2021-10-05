@@ -59,7 +59,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 			$iterations++;
 		}
 		echo '		<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Homepage:default")) /* line 27 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 27 */;
 		echo '">Úvod</a></li>
 		<li><a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Contact:default")) /* line 28 */;
