@@ -24,8 +24,7 @@ class FormFactory
     {
         $form = new Form;
         
-        $form->onSuccess['save'] = [$this, 'save'];
-        $form->onSuccess['edit'] = [$this, 'edit'];
+        $form->onSuccess['save'] = function(){};
         $form->onSuccess['afterSave'] = [$this, 'afterSave'];
         $form->setRenderer($this->renderer);
 

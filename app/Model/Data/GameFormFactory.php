@@ -6,6 +6,7 @@ use Nette\Application\UI\Form;
 use App\Model\DatabaseFunctions;
 
 
+
 class GameFormFactory
 {
 
@@ -35,9 +36,9 @@ class GameFormFactory
         $form->addText('game_title', 'název hry');
         $form->addText('game_description', 'popis hry');
         $form->addText('game_content', 'pravidla hry');
+        $form->addHidden('game_id');
 
         $form->onSuccess['save'] = [$this, 'save'];
-        $form->onSuccess['edit'] = [$this, 'edit'];
 
         return $form;
 
@@ -49,10 +50,12 @@ class GameFormFactory
 	 */
     public function save(Form $form, $values)
     {
-        $this->databaseFunctions->saveGame($values);
+        if (empty($values->game_id)) {
+            unset($values->game_id);
+            $this->databaseFunctions->saveGame($values);
+        } else {
+            $this->databaseFunctions->editGame($values);
+        }
     }
-    public function edit(Form $form, $values)
-    {
-        $this->databaseFunctions->editGame($values);
-    }
+    
 }

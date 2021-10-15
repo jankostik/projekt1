@@ -23,6 +23,7 @@ class GamesPresenter extends BasePresenter
 
     public function actionEdit($url)
     {
+        $this['gameForm']->addSubmit('edit', 'upravit hru');
         $this['gameForm']->setDefaults($this->databaseFunctions->getGame($url));
     }
 
