@@ -36,3 +36,5 @@ services:
 	- App\Router\RouterFactory::createRouter
 	- App\Model\DatabaseFunctions
 	- App\Presenters\ContactPresenter(%contactEmail%)
+	- App\Model\Data\GameFormFactory
+	- App\Model\Data\FormFactory

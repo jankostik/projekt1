@@ -52,11 +52,17 @@ final class Template05c7460031 extends Latte\Runtime\Template
 	<li><strong>';
 			echo LR\Filters::escapeHtmlText($game->game_description) /* line 4 */;
 			echo '</strong></li>
+	<a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:edit", [$game->game_url])) /* line 5 */;
+			echo '">upravit hru</a>
 </ul>
 ';
 			$iterations++;
 		}
-		
+		echo '<a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:new")) /* line 7 */;
+		echo '">vytvořit novou hru</a>
+';
 	}
 
 }

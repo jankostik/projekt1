@@ -108,6 +108,8 @@ class Container_0d26a4f28b extends Nette\DI\Container
 			],
 		],
 		'App\Presenters\ContactPresenter' => [2 => ['07']],
+		'App\Model\Data\GameFormFactory' => [['08']],
+		'App\Model\Data\FormFactory' => [['09']],
 		'App\Presenters\ErrorPresenter' => [2 => ['application.1']],
 		'App\Presenters\Error4xxPresenter' => [2 => ['application.2']],
 		'App\Presenters\SignPresenter' => [2 => ['application.3']],
@@ -189,6 +191,18 @@ class Container_0d26a4f28b extends Nette\DI\Container
 	}
 
 
+	public function createService08(): App\Model\Data\GameFormFactory
+	{
+		return new App\Model\Data\GameFormFactory($this->getService('09'), $this->getService('06'));
+	}
+
+
+	public function createService09(): App\Model\Data\FormFactory
+	{
+		return new App\Model\Data\FormFactory;
+	}
+
+
 	public function createServiceApplication__1(): App\Presenters\ErrorPresenter
 	{
 		return new App\Presenters\ErrorPresenter($this->getService('tracy.logger'));
@@ -247,6 +261,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 			$this->getService('latte.templateFactory')
 		);
 		$service->injectDatabaseFunctions($this->getService('06'));
+		$service->gameFormFactory = $this->getService('08');
 		$service->invalidLinkMode = 5;
 		return $service;
 	}

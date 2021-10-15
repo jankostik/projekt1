@@ -48,14 +48,13 @@ class DatabaseFunctions extends DatabaseManager
     //uloží nebo updatuje hru
     public function saveGame(ArrayHash $games)
     {
-        if(empty($games[self::GAME_URL])){
-            unset($games[self::GAME_URL]);
-            $this->database->table(self::GAME_TABLE)->insert($games);
-        } else {
-            $this->database->table(self::GAME_TABLE)->where(self::GAME_URL, $games[self::GAME_URL])->update($games);
-        }
+        $this->database->table(self::GAME_TABLE)->insert($games);
     }
 
+    public function editGame(ArrayHash $games)
+    {
+        $this->database->table(self::GAME_TABLE)->where(self::GAME_URL, $games[self::GAME_URL])->update($games);
+    }
 
     //vymaže hru
     public function removeGame(string $url)

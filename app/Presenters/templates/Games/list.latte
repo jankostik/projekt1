@@ -2,5 +2,7 @@
 <ul n:foreach="$gamesList as $game">
 	<li><a n:href="Games:show $game->game_url">{$game->game_title}</a></li>
 	<li><strong>{$game->game_description}</strong></li>
+	<a n:href="Games:edit $game->game_url">upravit hru</a>
 </ul>
+<a n:href="Games:new">vytvořit novou hru</a>
 {/block}

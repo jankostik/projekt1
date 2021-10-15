@@ -5,23 +5,51 @@ declare(strict_types=1);
 namespace App\Presenters;
 
 use App\Model\DatabaseFunctions;
+use App\Model\Data\GameFormFactory;
 
 class GamesPresenter extends BasePresenter
 {
 
     use Traits\Menu;
 
+    /** @var GameFormFactory @inject */
+	public $gameFormFactory;
 
-    /*public function injectDatabaseFunctions(DatabaseFunctions $databaseFunctions) :void
+    public function actionNew()
     {
-        $this->databaseFunctions = $databaseFunctions;
+        $this['gameForm']->addSubmit('save', 'přidat hru');
     }
 
-    /*public function beforeRender()
-	{
-		$this->template->menu = $this->databaseFunctions->getCategories();
-	}*/
-    
+
+    public function actionEdit($url)
+    {
+        $this['gameForm']->setDefaults($this->databaseFunctions->getGame($url));
+    }
+
+
+    protected function createComponentGameForm()
+    {
+        $form = $this->gameFormFactory->create();
+
+        $form->onSuccess['afterSave'] =
+            function($form, $values)
+            {
+                if (empty($url)) { #nový záznam
+                    $this->flashMessage("hta byla vytovřena");
+                } 
+                else{
+                    $this->flashMessage("hra byla upravena");
+                }
+            };
+
+        return $form;
+    }
+
+
+
+
+
+    /**funkce pro vykreslováni obsahu */
     public function renderList($category_url)
     {
         $this->template->gamesList = $this->databaseFunctions->getGamesByCategory($category_url);
@@ -39,37 +67,6 @@ class GamesPresenter extends BasePresenter
         $this->redirect('Games:list $category_url');
     }
 
-    public function actionEditor(string $url = null)
-    {
-        if ($url) {
-            if (!($game = $this->DatabaseFunctions->getGame($url)))
-                $this->flashMessage('Hra nebyla nalezena.');
-            else $this['editForm']->setDefaults($game);
-        }
-    }
-
-    protected function createComponentEditorForm()
-    {
-        // Vytvoření formuláře a definice jeho polí.
-        $form = new Form;
-        $form->addHidden('article_id');
-        $form->addText('title', 'Titulek')->setRequired();
-        $form->addText('url', 'URL')->setRequired();
-        $form->addText('description', 'Popisek')->setRequired();
-        $form->addTextArea('content', 'Obsah');
-        $form->addSubmit('save', 'Uložit článek');
-
-        // Funkce se vykonaná při úspěšném odeslání formuláře a zpracuje zadané hodnoty.
-        $form->onSuccess[] = function (Form $form, ArrayHash $values) {
-            try {
-                $this->articleManager->saveArticle($values);
-                $this->flashMessage('Článek byl úspěšně uložen.');
-                $this->redirect('Article:', $values->url);
-            } catch (UniqueConstraintViolationException $e) {
-                $this->flashMessage('Článek s touto URL adresou již existuje.');
-            }
-        };
-
-        return $form;
-    }
+   
+    
 }
