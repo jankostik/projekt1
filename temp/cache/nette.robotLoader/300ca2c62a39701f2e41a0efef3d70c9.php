@@ -20,12 +20,12 @@ return array (
     'App\\Model\\DatabaseFunctions' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/DatabaseFunctions.php',
-      1 => 1634319129,
+      1 => 1634381017,
     ),
     'App\\Model\\Data\\GameFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/Data/GameFormFactory.php',
-      1 => 1634319149,
+      1 => 1634320222,
     ),
     'App\\Model\\Data\\FormFactory' => 
     array (
@@ -72,6 +72,11 @@ return array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/ErrorPresenter.php',
       1 => 1631089707,
     ),
+    'App\\Presenters\\AdministrationPresenter' => 
+    array (
+      0 => '/var/www/sites/Nette/projekt1/app/Presenters/AdministrationPresenter.php',
+      1 => 1634383887,
+    ),
     'App\\Presenters\\Traits\\Menu' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/Traits/Menu.php',
@@ -100,7 +105,7 @@ return array (
     'App\\Presenters\\GamesPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/GamesPresenter.php',
-      1 => 1634318808,
+      1 => 1634385554,
     ),
   ),
   1 => 

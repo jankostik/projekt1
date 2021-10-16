@@ -35,7 +35,7 @@ class GamesPresenter extends BasePresenter
         $form->onSuccess['afterSave'] =
             function($form, $values)
             {
-                if (empty($url)) { #nový záznam
+                if (empty($values->game_id)) { #nový záznam
                     $this->flashMessage("hta byla vytovřena");
                 } 
                 else{
