@@ -37,4 +37,5 @@ services:
 	- App\Model\DatabaseFunctions
 	- App\Presenters\ContactPresenter(%contactEmail%)
 	- App\Model\Data\GameFormFactory
+	- App\Model\Data\CategoryFormFactory
 	- App\Model\Data\FormFactory

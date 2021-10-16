@@ -10,7 +10,7 @@ use App\Model\Data\GameFormFactory;
 class GamesPresenter extends BasePresenter
 {
 
-    use Traits\Menu;
+    
 
     /** @var GameFormFactory @inject */
 	public $gameFormFactory;

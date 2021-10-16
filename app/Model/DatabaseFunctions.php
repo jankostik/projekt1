@@ -73,4 +73,19 @@ class DatabaseFunctions extends DatabaseManager
     {
         return $this->getcategories()->fetchAssoc('category_url=category_url');
     }
+
+    public function saveCategory($category)
+    {
+        $this->database->table(self::CATEGORY_TABLE)->insert($category);
+    }
+
+    public function editCategory($category)
+    {
+        $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_URL, $category[self::CATEGORY_URL])->update($category);
+    }
+
+    public function getCategory($url)
+    {
+        return $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_URL, $url)->fetch();
+    }
 }

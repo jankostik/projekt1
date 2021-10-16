@@ -5,27 +5,39 @@ declare(strict_types=1);
 namespace App\Presenters;
 
 use App\Model\DatabaseFunctions;
-use App\Model\Data\GameFormFactory;
+use App\Model\Data\CategoryFormFactory;
 
 class AdministrationPresenter extends BasePresenter
 {
 
-    /** @var GameFormFactory @inject */
-	public $gameFormFactory;
+    /** @var CategoryFormFactory @inject */
+	public $categoryFormFactory;
 
-    
-    protected function createComponentGameForm()
+    public function actionNewC()
     {
-        $form = $this->gameFormFactory->create();
+        $this['categoryForm']->addSubmit('save', 'přidat kategorii');
+    }
+
+
+    public function actionEditC($url)
+    {
+        $this['categoryForm']->addSubmit('edit', 'upravit kategorii');
+        $this['categoryForm']->setDefaults($this->databaseFunctions->getCategory($url));
+    }
+
+
+    protected function createComponentCategoryForm()
+    {
+        $form = $this->categoryFormFactory->create();
 
         $form->onSuccess['afterSave'] =
             function($form, $values)
             {
-                if (empty($url)) { #nový záznam
-                    $this->flashMessage("hra byla vytovřena");
+                if (empty($values->category_id)) { #nový záznam
+                    $this->flashMessage("kategorie byla vytovřena");
                 } 
                 else{
-                    $this->flashMessage("hra byla upravena");
+                    $this->flashMessage("kategorie byla upravena");
                 }
             };
 

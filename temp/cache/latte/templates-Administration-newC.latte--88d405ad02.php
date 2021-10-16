@@ -2,8 +2,8 @@
 
 use Latte\Runtime as LR;
 
-/** source: /var/www/sites/Nette/projekt1/app/Presenters/templates/Administration/default.latte */
-final class Template8e0fc4589d extends Latte\Runtime\Template
+/** source: /var/www/sites/Nette/projekt1/app/Presenters/templates/Administration/newC.latte */
+final class Template88d405ad02 extends Latte\Runtime\Template
 {
 	protected const BLOCKS = [
 		['content' => 'blockContent'],
@@ -35,13 +35,10 @@ final class Template8e0fc4589d extends Latte\Runtime\Template
 		extract($this->params);
 		extract($ʟ_args);
 		unset($ʟ_args);
-		echo '<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Games:new")) /* line 2 */;
-		echo '">přidat novou hru</a></li>
-<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Administration:newC")) /* line 3 */;
-		echo '">přidat novou kategorii</a></li>
-';
+		/* line 3 */ $_tmp = $this->global->uiControl->getComponent("categoryForm");
+		if ($_tmp instanceof Nette\Application\UI\Renderable) $_tmp->redrawControl(null, false);
+		$_tmp->render();
+		
 	}
 
 }

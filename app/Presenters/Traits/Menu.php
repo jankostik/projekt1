@@ -9,7 +9,7 @@ use App\Model\DatabaseFunctions;
 trait Menu
 {
     
-    private $databaseFunctions;
+    protected $databaseFunctions;
 
 	public function injectDatabaseFunctions(DatabaseFunctions $databaseFunctions) :void
     {
