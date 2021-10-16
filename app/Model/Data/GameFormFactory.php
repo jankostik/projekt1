@@ -31,8 +31,11 @@ class GameFormFactory
     {
         $form = $this->formFactory->create();
 
+        $selectItems = $this->databaseFunctions->getCategoriesAssoc();
+
         $form->addText('game_url', 'url adresa hry');
-        $form->addText('category_url', 'url adresa kategorie hry');
+        //$form->addText('category_url', 'url adresa kategorie hry');
+        $form->addSelect('category_url', 'kategorie:', $selectItems);
         $form->addText('game_title', 'název hry');
         $form->addText('game_description', 'popis hry');
         $form->addText('game_content', 'pravidla hry');

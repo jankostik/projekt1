@@ -23,7 +23,8 @@ class DatabaseFunctions extends DatabaseManager
 
         //konstanty pro kategorie
         CATEGORY_TABLE = 'categories',
-        CATEGORY_URL = 'category_url';
+        CATEGORY_URL = 'category_url',
+        CATEGORY_ID = 'category_id';
 
 
     //získá všechny hry z tabulky
@@ -66,5 +67,10 @@ class DatabaseFunctions extends DatabaseManager
     public function getCategories()
     {
         return $this->database->table(self::CATEGORY_TABLE)->order(self::CATEGORY_URL);
+    }
+
+    public function getCategoriesAssoc()
+    {
+        return $this->getcategories()->fetchAssoc('category_url=category_url');
     }
 }
