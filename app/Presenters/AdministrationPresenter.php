@@ -34,7 +34,7 @@ class AdministrationPresenter extends BasePresenter
             function($form, $values)
             {
                 if (empty($values->category_id)) { #nový záznam
-                    $this->flashMessage("kategorie byla vytovřena");
+                    $this->flashMessage("kategorie byla vytvořena");
                 } 
                 else{
                     $this->flashMessage("kategorie byla upravena");

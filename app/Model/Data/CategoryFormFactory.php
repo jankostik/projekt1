@@ -33,8 +33,8 @@ class CategoryFormFactory
 
         
 
-        $form->addText('category_url', 'url adresa kategorie');
-        $form->addText('category_title', 'název kategorie');
+        $form->addText('category_url', 'url adresa kategorie')->setRequired();
+        $form->addText('category_title', 'název kategorie')->setRequired();
         $form->addHidden('category_id');
 
         $form->onSuccess['save'] = [$this, 'save'];

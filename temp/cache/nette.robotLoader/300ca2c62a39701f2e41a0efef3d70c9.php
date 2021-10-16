@@ -25,7 +25,7 @@ return array (
     'App\\Model\\Data\\GameFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/Data/GameFormFactory.php',
-      1 => 1634386506,
+      1 => 1634395556,
     ),
     'App\\Model\\Data\\FormFactory' => 
     array (
@@ -35,7 +35,7 @@ return array (
     'App\\Model\\Data\\CategoryFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/Data/CategoryFormFactory.php',
-      1 => 1634387957,
+      1 => 1634395574,
     ),
     'App\\Bootstrap' => 
     array (
@@ -80,7 +80,7 @@ return array (
     'App\\Presenters\\AdministrationPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/AdministrationPresenter.php',
-      1 => 1634391301,
+      1 => 1634392132,
     ),
     'App\\Presenters\\Traits\\Menu' => 
     array (
@@ -110,7 +110,7 @@ return array (
     'App\\Presenters\\GamesPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/GamesPresenter.php',
-      1 => 1634391557,
+      1 => 1634392151,
     ),
   ),
   1 => 
@@ -135,7 +135,7 @@ return array (
     'App\\Presenters\\AdministrationDefaultTemplate' => 3,
     'App\\Presenters\\AdministrationTemplate' => 3,
     'App\\Presenters\\CategoryFormFactory' => 2,
-    'App\\Presenters\\AdministrationNewCTemplate' => 2,
+    'App\\Presenters\\AdministrationNewCTemplate' => 3,
     'App\\Presenters\\AdministrationEditCTemplate' => 3,
   ),
   2 => 

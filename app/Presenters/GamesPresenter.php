@@ -36,7 +36,7 @@ class GamesPresenter extends BasePresenter
             function($form, $values)
             {
                 if (empty($values->game_id)) { #nový záznam
-                    $this->flashMessage("hta byla vytovřena");
+                    $this->flashMessage("hra byla vytvořena");
                 } 
                 else{
                     $this->flashMessage("hra byla upravena");
