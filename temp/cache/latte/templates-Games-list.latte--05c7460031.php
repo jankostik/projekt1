@@ -13,7 +13,6 @@ final class Template05c7460031 extends Latte\Runtime\Template
 	public function main(): array
 	{
 		extract($this->params);
-		echo '{';
 		if ($this->getParentName()) {
 			return get_defined_vars();
 		}
@@ -52,19 +51,26 @@ final class Template05c7460031 extends Latte\Runtime\Template
 	<li><strong>';
 			echo LR\Filters::escapeHtmlText($game->game_description) /* line 4 */;
 			echo '</strong></li>
-	<a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:edit", [$game->game_url])) /* line 5 */;
-			echo '">upravit hru</a>
-</ul>
+';
+			if ($user->isInRole('admin')) /* line 5 */ {
+				echo '	<a href="';
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:edit", [$game->game_url])) /* line 6 */;
+				echo '">upravit hru</a>
+';
+			}
+			echo '</ul>
 ';
 			$iterations++;
 		}
-		echo '<a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:new")) /* line 7 */;
-		echo '">vytvořit novou hru</a>
-<br>
+		if ($user->isInRole('admin')) /* line 9 */ {
+			echo '<a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:new")) /* line 10 */;
+			echo '">vytvořit novou hru</a>
+';
+		}
+		echo '<br>
 <a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 9 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 13 */;
 		echo '">zpět</a>
 ';
 	}

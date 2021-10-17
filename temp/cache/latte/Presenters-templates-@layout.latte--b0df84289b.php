@@ -14,6 +14,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		echo '
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,7 +108,6 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
-		$this->createTemplate('components/form.latte', $this->params, "import")->render() /* line 6 */;
 		Nette\Bridges\ApplicationLatte\UIRuntime::initialize($this, $this->parentName, $this->blocks);
 		
 	}

@@ -27,15 +27,44 @@ database:
 	options:
 		lazy: yes
 
-
 services:
-	- App\Model\UserFacade
-	- App\Forms\FormFactory
-	- App\Forms\SignInFormFactory
-	- App\Forms\SignUpFormFactory
-	- App\Router\RouterFactory::createRouter
-	- App\Model\DatabaseFunctions
-	- App\Presenters\ContactPresenter(%contactEmail%)
-	- App\Model\Data\GameFormFactory
-	- App\Model\Data\CategoryFormFactory
-	- App\Model\Data\FormFactory
+    router: App\Router\RouterFactory::createRouter # Nastavení služby routeru aplikace.
+    authenticator: App\Model\UserManager    # Nastavení služby pro přihlašování do aplikace.
+    security.authorizator:                  # Nastavení služby pro oprávnění uživatelů aplikace (ACL).
+        setup:
+            # Zdroje aplikace.
+            - addResource(Error)
+            # Pravidla přístupu.
+            - allow(admin) # Administrátor může všechno.
+            - allow(guest, Error)
+			# Zdroje CoreModule.
+            - addResource(Administration)
+            - addResource(Games)
+            - addResource(Contact)
+			# Pravidla přístupu.
+            - allow(guest, Administration, login)
+            - allow(guest, Administration, register)
+            - allow(guest, Games, default)
+            - allow(guest, Games, list)
+            - allow(guest, Games, show)
+            - allow(guest, Contact)
+            - allow(member, Administration, default)
+            - allow(member, Administration, logout)
+
+	# Definice dalších služeb dále přístupných pomocí DI
+    - App\Forms\FormFactory
+    - App\Forms\SignInFormFactory
+    - App\Forms\SignUpFormFactory
+    - App\Model\Data\GameFormFactory
+    - App\Model\Data\CategoryFormFactory
+    - App\Model\Data\FormFactory
+    - App\Model\DatabaseFunctions
+    - App\Presenters\ContactPresenter(%contactEmail%)
+
+# Nastavení společných uživatelských rolí v rámci celé aplikace (ACL).
+security:
+	roles:
+		guest:
+		member: [guest]
+		admin:
+		

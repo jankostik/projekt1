@@ -2,8 +2,8 @@
 
 use Latte\Runtime as LR;
 
-/** source: /var/www/sites/Nette/projekt1/app/Presenters/templates/Administration/default.latte */
-final class Template8e0fc4589d extends Latte\Runtime\Template
+/** source: /var/www/sites/Nette/projekt1/app/Presenters/templates/Administration/register.latte */
+final class Templatea18eb3ad0e extends Latte\Runtime\Template
 {
 	protected const BLOCKS = [
 		['title' => 'blockTitle', 'description' => 'blockDescription', 'content' => 'blockContent'],
@@ -36,14 +36,14 @@ final class Template8e0fc4589d extends Latte\Runtime\Template
 	/** {block title} on line 1 */
 	public function blockTitle(array $ʟ_args): void
 	{
-		echo 'Administrace webu';
+		echo 'Registrace';
 	}
 
 
 	/** {block description} on line 2 */
 	public function blockDescription(array $ʟ_args): void
 	{
-		echo 'Administrace webu.';
+		echo 'Registrace nového uživatelského účtu.';
 	}
 
 
@@ -53,23 +53,10 @@ final class Template8e0fc4589d extends Latte\Runtime\Template
 		extract($this->params);
 		extract($ʟ_args);
 		unset($ʟ_args);
-		echo '<p>Vítejte v administraci! Jste přihlášeni jako <b>';
-		echo LR\Filters::escapeHtmlText($username) /* line 4 */;
-		echo '</b>.</p>
-';
-		if (!$user->isInRole('admin')) /* line 5 */ {
-			echo '<p>Nemáte administrátorská oprávnění, požádejte administrátora webu, aby vám je přidělil.</p>
-';
-		}
-		echo '<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Games:new")) /* line 6 */;
-		echo '">přidat novou hru</a></li>
-<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Administration:newC")) /* line 7 */;
-		echo '">přidat novou kategorii</a></li>
-<h2><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("logout")) /* line 8 */;
-		echo '">Odhlásit</a></h2>';
+		/* line 5 */ $_tmp = $this->global->uiControl->getComponent("registerForm");
+		if ($_tmp instanceof Nette\Application\UI\Renderable) $_tmp->redrawControl(null, false);
+		$_tmp->render();
+		
 	}
 
 }

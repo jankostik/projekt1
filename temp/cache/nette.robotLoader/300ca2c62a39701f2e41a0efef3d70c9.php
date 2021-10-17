@@ -2,20 +2,20 @@
 return array (
   0 => 
   array (
+    'App\\Model\\UserManager' => 
+    array (
+      0 => '/var/www/sites/Nette/projekt1/app/Model/UserManager.php',
+      1 => 1634398816,
+    ),
+    'App\\Model\\DuplicateNameException' => 
+    array (
+      0 => '/var/www/sites/Nette/projekt1/app/Model/UserManager.php',
+      1 => 1634398816,
+    ),
     'App\\Model\\DatabaseManager' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/DatabaseManager.php',
       1 => 1633175334,
-    ),
-    'App\\Model\\UserFacade' => 
-    array (
-      0 => '/var/www/sites/Nette/projekt1/app/Model/UserFacade.php',
-      1 => 1631089707,
-    ),
-    'App\\Model\\DuplicateNameException' => 
-    array (
-      0 => '/var/www/sites/Nette/projekt1/app/Model/UserFacade.php',
-      1 => 1631089707,
     ),
     'App\\Model\\DatabaseFunctions' => 
     array (
@@ -50,17 +50,17 @@ return array (
     'App\\Forms\\FormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Forms/FormFactory.php',
-      1 => 1634017460,
+      1 => 1634398604,
     ),
     'App\\Forms\\SignUpFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Forms/SignUpFormFactory.php',
-      1 => 1634017460,
+      1 => 1634398864,
     ),
     'App\\Forms\\SignInFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Forms/SignInFormFactory.php',
-      1 => 1634017460,
+      1 => 1634398851,
     ),
     'App\\Router\\RouterFactory' => 
     array (
@@ -80,7 +80,7 @@ return array (
     'App\\Presenters\\AdministrationPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/AdministrationPresenter.php',
-      1 => 1634392132,
+      1 => 1634400153,
     ),
     'App\\Presenters\\Traits\\Menu' => 
     array (
@@ -97,15 +97,10 @@ return array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/Error4xxPresenter.php',
       1 => 1631089707,
     ),
-    'App\\Presenters\\SignPresenter' => 
-    array (
-      0 => '/var/www/sites/Nette/projekt1/app/Presenters/SignPresenter.php',
-      1 => 1631089707,
-    ),
     'App\\Presenters\\BasePresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/BasePresenter.php',
-      1 => 1633714502,
+      1 => 1634464554,
     ),
     'App\\Presenters\\GamesPresenter' => 
     array (
@@ -137,6 +132,10 @@ return array (
     'App\\Presenters\\CategoryFormFactory' => 2,
     'App\\Presenters\\AdministrationNewCTemplate' => 3,
     'App\\Presenters\\AdministrationEditCTemplate' => 3,
+    'App\\Presenters\\LoginPresenter' => 2,
+    'App\\CoreModule\\Presenters\\AdministrationPresenter' => 1,
+    'App\\Presenters\\AdministrationLoginTemplate' => 3,
+    'App\\Presenters\\AdministrationRegisterTemplate' => 2,
   ),
   2 => 
   array (
