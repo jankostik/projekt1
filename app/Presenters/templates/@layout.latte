@@ -21,11 +21,16 @@
 <body>
 	<header>
 		<ul>
-		<li n:foreach="$menu as $item">
-			<a n:href="Games:list $item->category_url">{$item->category_title}</a>
-			<li><a n:href="Administration:editC $item->category_url">upravit kategorii</a></li>
-			<br>
-		</li>
+		<div class="dropdown">
+			<button class="dropbtn">Dropdown</button>
+			<div class="dropdown-content">
+				<li n:foreach="$menu as $item">
+					<a n:href="Games:list $item->category_url">{$item->category_title}</a>
+					<a n:href="Administration:editC $item->category_url">upravit kategorii</a>
+					<br>
+				</li>
+			</div>
+		</div>
 		<li><a n:href=Games:default>Úvod</a></li>
 		<li><a n:href=:Contact:default>Kontakt</a></li>
 		<li><a n:href=:Administration:default>Administrace</a></li>
