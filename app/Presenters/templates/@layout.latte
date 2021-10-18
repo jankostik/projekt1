@@ -34,8 +34,9 @@
 					<div class="dropdown-content">
 						<li n:foreach="$menu as $item">
 							<a n:href="Games:list $item->category_url">{$item->category_title}</a>
-							<a class="editC" n:href="Administration:editC $item->category_url">upravit kategorii</a>
-							<br>
+							{if $user->isInRole('admin')}
+							<a class="editC" n:href="Administration:editC $item->category_url"> - upravit kategorii</a>
+							{/if}
 						</li>
 					</div>
 				</div>
