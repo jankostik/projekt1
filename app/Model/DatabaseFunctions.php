@@ -79,8 +79,9 @@ class DatabaseFunctions extends DatabaseManager
         $this->database->table(self::CATEGORY_TABLE)->insert($category);
     }
 
-    public function editCategory($category)
+    public function editCategory(ArrayHash $category)
     {
+        //$this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_URL, $category[self::CATEGORY_URL])->update($category);
         $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_URL, $category[self::CATEGORY_URL])->update($category);
     }
 
