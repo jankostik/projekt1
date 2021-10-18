@@ -45,58 +45,72 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 
 <body>
 	<header>
-		<ul>
-		<div class="dropdown">
-			<button class="dropbtn">Dropdown</button>
-			<div class="dropdown-content">
+	<nav class="navbar">
+		<div class="max-width">
+		<div class="logo">
+          <a href="#">
+            <img src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 27 */;
+		echo '/css/images/Ellipse 1.png" alt="logo">
+            Logo</a
+          >
+        </div>
+			<ul class="menu">
+				<div class="dropdown">
+					<button class="dropbtn">Kategorie</button>
+					<div class="dropdown-content">
 ';
 		$iterations = 0;
-		foreach ($menu as $item) /* line 27 */ {
-			echo '				<li>
-					<a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$item->category_url])) /* line 28 */;
+		foreach ($menu as $item) /* line 35 */ {
+			echo '						<li>
+							<a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$item->category_url])) /* line 36 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($item->category_title) /* line 28 */;
+			echo LR\Filters::escapeHtmlText($item->category_title) /* line 36 */;
 			echo '</a>
-					<a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Administration:editC", [$item->category_url])) /* line 29 */;
+							<a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Administration:editC", [$item->category_url])) /* line 37 */;
 			echo '">upravit kategorii</a>
-					<br>
-				</li>
+							<br>
+						</li>
 ';
 			$iterations++;
 		}
-		echo '			</div>
-		</div>
-		<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 34 */;
+		echo '					</div>
+				</div>
+				<li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 42 */;
 		echo '">Úvod</a></li>
-		<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Contact:default")) /* line 35 */;
+				<li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Contact:default")) /* line 43 */;
 		echo '">Kontakt</a></li>
-		<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Administration:default")) /* line 36 */;
+				<li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Administration:default")) /* line 44 */;
 		echo '">Administrace</a></li>
-		</ul>
+			</ul>
+		</div>
+	</nav>
 	</header>
 	<div class=container>
 ';
 		$iterations = 0;
-		foreach ($flashes as $flash) /* line 40 */ {
+		foreach ($flashes as $flash) /* line 50 */ {
 			echo '		<div';
-			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 40 */;
+			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 50 */;
 			echo '>';
-			echo LR\Filters::escapeHtmlText($flash->message) /* line 40 */;
+			echo LR\Filters::escapeHtmlText($flash->message) /* line 50 */;
 			echo '</div>
 ';
 			$iterations++;
 		}
-		echo "\n";
-		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 42 */;
-		echo '	</div>
+		echo '		<div class="max-width">
+';
+		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 52 */;
+		echo '		</div>
+	</div>
 
 ';
-		$this->renderBlock('scripts', get_defined_vars()) /* line 45 */;
+		$this->renderBlock('scripts', get_defined_vars()) /* line 56 */;
 		echo '
 </body>
 </html>
@@ -109,7 +123,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['item' => '27', 'flash' => '40'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['item' => '35', 'flash' => '50'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -125,7 +139,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	}
 
 
-	/** {block scripts} on line 45 */
+	/** {block scripts} on line 56 */
 	public function blockScripts(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -134,7 +148,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 		echo '	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 	<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 48 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 59 */;
 		echo '/js/main.js"></script>
 ';
 	}
