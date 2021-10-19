@@ -94,7 +94,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 		</div>
 	</nav>
 	</header>
-	<div class=container>
+	
 ';
 		$iterations = 0;
 		foreach ($flashes as $flash) /* line 51 */ {
@@ -110,7 +110,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 ';
 		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 53 */;
 		echo '		</div>
-	</div>
+	
 
 ';
 		$this->renderBlock('scripts', get_defined_vars()) /* line 57 */;

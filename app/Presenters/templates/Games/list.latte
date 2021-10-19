@@ -1,7 +1,8 @@
 {block content}
 <div class="content">
 	<ul n:foreach="$gamesList as $game">
-		<li><a n:href="Games:show $game->game_url">{$game->game_title}</a></li>
+		<li><a class="list" n:href="Games:show $game->game_url">{$game->game_title}</a></li>
+		<div class="line"></div>
 		<li><strong>{$game->game_description}</strong></li>
 		{if $user->isInRole('admin')}
 		<a n:href="Games:edit $game->game_url">upravit hru</a>
