@@ -1,8 +1,11 @@
 {{block content}
-{$game->game_title}
-<br>
-{$game->game_content}
-<br>
-<strong>{$game->game_description}</strong>
-<a n:href="Games:list $game->category_url">zpět</a>
+<div class="content">
+    {$game->game_title}
+    <br>
+    {$game->game_content}
+    <br>
+    <strong>{$game->game_description}</strong>
+    <a n:href="Games:list $game->category_url">zpět</a>
+</div>
+
 {/block}}

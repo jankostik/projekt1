@@ -37,19 +37,23 @@ final class Template678ac87aaf extends Latte\Runtime\Template
 		extract($this->params);
 		extract($ʟ_args);
 		unset($ʟ_args);
-		echo LR\Filters::escapeHtmlText($game->game_title) /* line 2 */;
+		echo '<div class="content">
+    ';
+		echo LR\Filters::escapeHtmlText($game->game_title) /* line 3 */;
 		echo '
-<br>
-';
-		echo LR\Filters::escapeHtmlText($game->game_content) /* line 4 */;
+    <br>
+    ';
+		echo LR\Filters::escapeHtmlText($game->game_content) /* line 5 */;
 		echo '
-<br>
-<strong>';
-		echo LR\Filters::escapeHtmlText($game->game_description) /* line 6 */;
+    <br>
+    <strong>';
+		echo LR\Filters::escapeHtmlText($game->game_description) /* line 7 */;
 		echo '</strong>
-<a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$game->category_url])) /* line 7 */;
+    <a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$game->category_url])) /* line 8 */;
 		echo '">zpět</a>
+</div>
+
 ';
 	}
 

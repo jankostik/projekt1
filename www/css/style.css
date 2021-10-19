@@ -127,10 +127,17 @@ li a:hover {
 	color: lightgray;
 }
 
-.content {
+.content{
+	display: flex;
 	flex-direction: column;
+	color: black;
+	margin: auto;
 }
 
 .dropdown-content li a {
 	margin: 0;
+}
+
+.content ul li a{
+	color: black;
 }
