@@ -8,6 +8,7 @@
 
 body {
 	height: auto;
+	font-family: "Quicksand", sans-serif;
 }
 
 .navbar {
@@ -57,9 +58,21 @@ li {
 	margin: 0 30px;
 }
 
-li a{
+li a {
 	color: white;
 	text-decoration: none;
+}
+
+
+.admin{
+	color: black;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.admin:hover{
+	color: rgb(103, 175, 77);
 }
   
 
@@ -99,9 +112,6 @@ form .required label {
 .dropdown-content a {
 	color: black;
 	text-decoration: none;
-	display: flex;
-	flex-direction: column;
-	font-family: "Quicksand", sans-serif;
 	font-weight: 500;
 	white-space: nowrap;
   }
@@ -145,7 +155,7 @@ li a:hover {
 .list{
 	color: black;
 	font-size: 30px;
-	font-weight: 300;
+	font-weight: 500;
 	
 }
 
@@ -166,4 +176,70 @@ ul{
 
 .content ul li {
 	margin: 0 5px;
+}
+
+.zpet {
+	color: black;
+	font-weight: 500;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+.zpet:hover {
+	color: rgb(103, 175, 77);
+	text-decoration: none;
+}
+
+p{
+	color: black;
+	font-weight: 500;
+	font-size: 30px;
+	margin: 20px 0; 
+}
+
+.text {
+	font-size: 15px;
+	margin: 0;
+}
+
+strong {
+	margin-bottom: 40px;
+}
+
+tbody{
+	display: flex;
+	flex-direction: column;
+}
+
+tr{
+	margin: 10px 0;
+	display: flex;
+}
+
+th{
+	margin-right: 10px;
+}
+
+input{
+	margin-right: 10px;
+}
+
+.button{
+	padding: 10px 20px;
+	background-color: rgb(103, 175, 77);
+	border: none;
+	border-radius: 5px;
+	color: white;
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.uvod {
+	flex-direction: column;
+}
+
+h1{
+	margin: 40px 0;
+	color: rgb(103, 175, 77);
+	font-size: 40px;
 }

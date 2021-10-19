@@ -35,10 +35,14 @@ final class Template88d405ad02 extends Latte\Runtime\Template
 		extract($this->params);
 		extract($ʟ_args);
 		unset($ʟ_args);
-		/* line 3 */ $_tmp = $this->global->uiControl->getComponent("categoryForm");
+		echo '<div class="content">
+    <h2>Vytvoření nové kategorie:</h2>
+';
+		/* line 5 */ $_tmp = $this->global->uiControl->getComponent("categoryForm");
 		if ($_tmp instanceof Nette\Application\UI\Renderable) $_tmp->redrawControl(null, false);
 		$_tmp->render();
-		
+		echo '</div>
+';
 	}
 
 }

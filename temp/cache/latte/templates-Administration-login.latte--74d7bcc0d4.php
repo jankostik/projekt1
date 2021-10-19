@@ -54,12 +54,13 @@ final class Template74d7bcc0d4 extends Latte\Runtime\Template
 		extract($ʟ_args);
 		unset($ʟ_args);
 		echo '<div class="content">
+    <h2>Přihlášení:</h2>
 ';
-		/* line 6 */ $_tmp = $this->global->uiControl->getComponent("loginForm");
+		/* line 7 */ $_tmp = $this->global->uiControl->getComponent("loginForm");
 		if ($_tmp instanceof Nette\Application\UI\Renderable) $_tmp->redrawControl(null, false);
 		$_tmp->render();
 		echo '    <p>Pokud ještě nemáte účet, <a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("register")) /* line 7 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("register")) /* line 8 */;
 		echo '">zaregistrujte se</a>.</p>
 </div>';
 	}

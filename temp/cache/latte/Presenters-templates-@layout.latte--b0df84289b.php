@@ -56,22 +56,25 @@ final class Templateb0df84289b extends Latte\Runtime\Template
           >
         </div>
 			<ul class="menu">
+				<li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 32 */;
+		echo '">Úvod</a></li>
 				<div class="dropdown">
 					<button class="dropbtn">Kategorie</button>
 					<div class="dropdown-content">
 ';
 		$iterations = 0;
-		foreach ($menu as $item) /* line 35 */ {
+		foreach ($menu as $item) /* line 36 */ {
 			echo '						<li>
 							<a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$item->category_url])) /* line 36 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$item->category_url])) /* line 37 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($item->category_title) /* line 36 */;
+			echo LR\Filters::escapeHtmlText($item->category_title) /* line 37 */;
 			echo '</a>
 ';
-			if ($user->isInRole('admin')) /* line 37 */ {
+			if ($user->isInRole('admin')) /* line 38 */ {
 				echo '							<a class="editC" href="';
-				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Administration:editC", [$item->category_url])) /* line 38 */;
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Administration:editC", [$item->category_url])) /* line 39 */;
 				echo '"> - upravit kategorii</a>
 ';
 			}
@@ -81,9 +84,6 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 		}
 		echo '					</div>
 				</div>
-				<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 43 */;
-		echo '">Úvod</a></li>
 				<li><a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Contact:default")) /* line 44 */;
 		echo '">Kontakt</a></li>
@@ -126,7 +126,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['item' => '35', 'flash' => '51'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['item' => '36', 'flash' => '51'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}

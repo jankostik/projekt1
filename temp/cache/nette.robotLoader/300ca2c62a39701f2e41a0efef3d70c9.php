@@ -20,7 +20,7 @@ return array (
     'App\\Model\\DatabaseFunctions' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/DatabaseFunctions.php',
-      1 => 1634589002,
+      1 => 1634589142,
     ),
     'App\\Model\\Data\\GameFormFactory' => 
     array (
@@ -60,7 +60,7 @@ return array (
     'App\\Forms\\SignInFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Forms/SignInFormFactory.php',
-      1 => 1634398851,
+      1 => 1634656903,
     ),
     'App\\Router\\RouterFactory' => 
     array (
@@ -135,7 +135,7 @@ return array (
     'App\\Presenters\\LoginPresenter' => 2,
     'App\\CoreModule\\Presenters\\AdministrationPresenter' => 1,
     'App\\Presenters\\AdministrationLoginTemplate' => 3,
-    'App\\Presenters\\AdministrationRegisterTemplate' => 2,
+    'App\\Presenters\\AdministrationRegisterTemplate' => 3,
   ),
   2 => 
   array (

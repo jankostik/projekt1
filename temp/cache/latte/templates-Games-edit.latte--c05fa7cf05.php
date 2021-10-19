@@ -39,10 +39,14 @@ final class Templatec05fa7cf05 extends Latte\Runtime\Template
 		extract($this->params);
 		extract($ʟ_args);
 		unset($ʟ_args);
-		/* line 4 */ $_tmp = $this->global->uiControl->getComponent("gameForm");
+		echo '<div class="content">
+    <h2>Úprava Hry:</h2>
+';
+		/* line 6 */ $_tmp = $this->global->uiControl->getComponent("gameForm");
 		if ($_tmp instanceof Nette\Application\UI\Renderable) $_tmp->redrawControl(null, false);
 		$_tmp->render();
-		
+		echo '</div>
+';
 	}
 
 }

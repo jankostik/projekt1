@@ -53,23 +53,25 @@ final class Template8e0fc4589d extends Latte\Runtime\Template
 		extract($this->params);
 		extract($ʟ_args);
 		unset($ʟ_args);
-		echo '<p>Vítejte v administraci! Jste přihlášeni jako <b>';
-		echo LR\Filters::escapeHtmlText($username) /* line 4 */;
+		echo '<div class="content">
+    <p>Vítejte v administraci! Jste přihlášeni jako <b>';
+		echo LR\Filters::escapeHtmlText($username) /* line 5 */;
 		echo '</b>.</p>
 ';
-		if (!$user->isInRole('admin')) /* line 5 */ {
-			echo '<p>Nemáte administrátorská oprávnění, požádejte administrátora webu, aby vám je přidělil.</p>
+		if (!$user->isInRole('admin')) /* line 6 */ {
+			echo '    <p>Nemáte administrátorská oprávnění, požádejte administrátora webu, aby vám je přidělil.</p>
 ';
 		}
-		echo '<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Games:new")) /* line 6 */;
+		echo '    <li><a class="admin" href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Games:new")) /* line 7 */;
 		echo '">přidat novou hru</a></li>
-<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Administration:newC")) /* line 7 */;
+    <li><a class="admin" href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Administration:newC")) /* line 8 */;
 		echo '">přidat novou kategorii</a></li>
-<h2><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("logout")) /* line 8 */;
-		echo '">Odhlásit</a></h2>';
+    <h2><a class="admin" href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("logout")) /* line 9 */;
+		echo '">Odhlásit</a></h2>
+</div>';
 	}
 
 }
