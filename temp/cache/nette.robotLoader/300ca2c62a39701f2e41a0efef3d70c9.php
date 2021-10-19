@@ -20,7 +20,7 @@ return array (
     'App\\Model\\DatabaseFunctions' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/DatabaseFunctions.php',
-      1 => 1634589142,
+      1 => 1634658880,
     ),
     'App\\Model\\Data\\GameFormFactory' => 
     array (
@@ -35,7 +35,7 @@ return array (
     'App\\Model\\Data\\CategoryFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/Data/CategoryFormFactory.php',
-      1 => 1634395574,
+      1 => 1634661031,
     ),
     'App\\Bootstrap' => 
     array (
@@ -55,7 +55,7 @@ return array (
     'App\\Forms\\SignUpFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Forms/SignUpFormFactory.php',
-      1 => 1634398864,
+      1 => 1634656942,
     ),
     'App\\Forms\\SignInFormFactory' => 
     array (
@@ -105,7 +105,7 @@ return array (
     'App\\Presenters\\GamesPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/GamesPresenter.php',
-      1 => 1634392151,
+      1 => 1634661475,
     ),
   ),
   1 => 
@@ -136,6 +136,7 @@ return array (
     'App\\CoreModule\\Presenters\\AdministrationPresenter' => 1,
     'App\\Presenters\\AdministrationLoginTemplate' => 3,
     'App\\Presenters\\AdministrationRegisterTemplate' => 3,
+    'App\\Presenters\\GamesRemoveTemplate' => 3,
   ),
   2 => 
   array (

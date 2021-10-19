@@ -20,6 +20,7 @@ class DatabaseFunctions extends DatabaseManager
         //konstanty pro hry
         GAME_TABLE = 'games',
         GAME_URL = 'game_url',
+        GAME_ID = "game_id",
 
         //konstanty pro kategorie
         CATEGORY_TABLE = 'categories',
@@ -54,7 +55,7 @@ class DatabaseFunctions extends DatabaseManager
 
     public function editGame(ArrayHash $games)
     {
-        $this->database->table(self::GAME_TABLE)->where(self::GAME_URL, $games[self::GAME_URL])->update($games);
+        $this->database->table(self::GAME_TABLE)->where(self::GAME_ID, $games[self::GAME_ID])->update($games);
     }
 
     //vymaže hru
@@ -82,7 +83,7 @@ class DatabaseFunctions extends DatabaseManager
     public function editCategory(ArrayHash $category)
     {
         //$this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_URL, $category[self::CATEGORY_URL])->update($category);
-        $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_URL, $category[self::CATEGORY_URL])->update($category);
+        $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_ID, $category[self::CATEGORY_ID])->update($category);
     }
 
     public function getCategory($url)

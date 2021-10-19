@@ -33,7 +33,7 @@ class CategoryFormFactory
 
         
 
-        $form->addText('category_url', 'url adresa kategorie')->setRequired();
+        //$form->addText('category_url', 'url adresa kategorie')->setRequired();
         $form->addText('category_title', 'název kategorie')->setRequired();
         $form->addHidden('category_id');
 
