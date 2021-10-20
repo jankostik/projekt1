@@ -63,11 +63,11 @@ class GamesPresenter extends BasePresenter
         $this->template->game = $this->databaseFunctions->getGame($game_url);
     }
     //až vše bude fungovat tak, ať je možnost i mazaz a upravovat kategorie
-    public function actionRemove($category_url, string $url = null)
+    public function actionRemove(string $url = null, $category_id)
     {
         $this->databaseFunctions->removeGame($url);
         $this->flashMessage('Hra Byla úspěšně odstraněna');
-        $this->redirect('Games:list $category_url');
+        $this->redirect('Games:list', $category_id);
     }
 
    
