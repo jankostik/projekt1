@@ -6,8 +6,6 @@
 		<li><strong>{$game->game_description}</strong></li>
 		{if $user->isInRole('admin')}
 		<a n:href="Games:edit $game->game_url">upravit hru</a>
-		{var $cat_url = $game->category_url}
-		<a n:href="remove $cat_url, $game->category_url">Odstranit</a>
 		{/if}
 	</ul>
 	{if $user->isInRole('admin')}

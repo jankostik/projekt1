@@ -67,7 +67,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 		foreach ($menu as $item) /* line 36 */ {
 			echo '						<li>
 							<a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$item->category_url])) /* line 37 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$item->category_id])) /* line 37 */;
 			echo '">';
 			echo LR\Filters::escapeHtmlText($item->category_title) /* line 37 */;
 			echo '</a>

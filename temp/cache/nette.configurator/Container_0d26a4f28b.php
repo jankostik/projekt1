@@ -346,7 +346,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 
 	public function createServiceDatabase__default__connection(): Nette\Database\Connection
 	{
-		$service = new Nette\Database\Connection('mysql:host=127.0.0.1;dbname=offline_zabava', 'root', 'Bl10_10Ji', ['lazy' => true]);
+		$service = new Nette\Database\Connection('mysql:host=127.0.0.1;dbname=offline_zabava02', 'root', 'Bl10_10Ji', ['lazy' => true]);
 		Nette\Database\Helpers::initializeTracy(
 			$service,
 			true,

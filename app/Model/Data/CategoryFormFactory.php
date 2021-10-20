@@ -32,10 +32,9 @@ class CategoryFormFactory
         $form = $this->formFactory->create();
 
         
-
-        //$form->addText('category_url', 'url adresa kategorie')->setRequired();
-        $form->addText('category_title', 'název kategorie')->setRequired();
         $form->addHidden('category_id');
+        $form->addText('category_url', 'url adresa kategorie')->setRequired();
+        $form->addText('category_title', 'název kategorie')->setRequired();
 
         $form->onSuccess['save'] = [$this, 'save'];
 

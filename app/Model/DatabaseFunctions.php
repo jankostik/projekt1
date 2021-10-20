@@ -41,9 +41,9 @@ class DatabaseFunctions extends DatabaseManager
         return $this->database->table(self::GAME_TABLE)->where(self::GAME_URL, $url)->fetch();
     }
 
-    public function getGamesByCategory($category_url)
+    public function getGamesByCategory($category_id)
     {
-        return $this->database->table(self::GAME_TABLE)->where(self::CATEGORY_URL, $category_url);
+        return $this->database->table(self::GAME_TABLE)->where(self::CATEGORY_ID, $category_id);
     }
 
 
@@ -72,7 +72,7 @@ class DatabaseFunctions extends DatabaseManager
 
     public function getCategoriesAssoc()
     {
-        return $this->getcategories()->fetchAssoc('category_url=category_url');
+        return $this->getcategories()->fetchAssoc('category_id=category_url');
     }
 
     public function saveCategory($category)

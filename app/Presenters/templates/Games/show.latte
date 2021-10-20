@@ -1,11 +1,11 @@
 {{block content}
 <div class="content">
     <p>{$game->game_title}</p>
-    <p class="text">{$game->game_content}</p>
+    <p class="text">{$game->game_text}</p>
     <br>
     <div class="line"></div>
     <strong>{$game->game_description}</strong>
-    <a class="zpet" n:href="Games:list $game->category_url">zpět</a>
+    <a class="zpet" n:href="Games:list $game->category_id">zpět</a>
 </div>
 
 {/block}}

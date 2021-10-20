@@ -60,25 +60,20 @@ final class Template05c7460031 extends Latte\Runtime\Template
 				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:edit", [$game->game_url])) /* line 8 */;
 				echo '">upravit hru</a>
 ';
-				$cat_url = $game->category_url /* line 9 */;
-				echo '		<a href="';
-				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("remove", [$cat_url, $game->category_url])) /* line 10 */;
-				echo '">Odstranit</a>
-';
 			}
 			echo '	</ul>
 ';
 			$iterations++;
 		}
-		if ($user->isInRole('admin')) /* line 13 */ {
+		if ($user->isInRole('admin')) /* line 11 */ {
 			echo '	<a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:new")) /* line 14 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:new")) /* line 12 */;
 			echo '">vytvořit novou hru</a>
 ';
 		}
 		echo '	<br>
 	<a class="zpet" href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 17 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 15 */;
 		echo '">zpět</a>
 </div>
 ';

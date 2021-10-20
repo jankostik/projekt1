@@ -21,7 +21,7 @@ session:
 
 
 database:
-	dsn: 'mysql:host=127.0.0.1;dbname=offline_zabava'
+	dsn: 'mysql:host=127.0.0.1;dbname=offline_zabava02'
 	user: root
 	password: Bl10_10Ji
 	options:
