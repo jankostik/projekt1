@@ -36,9 +36,11 @@ final class Template88d405ad02 extends Latte\Runtime\Template
 		extract($ʟ_args);
 		unset($ʟ_args);
 		echo '<div class="content">
+    <strong>Jste si jistí jestli je nutné vytvořit kategorii a nezařadit hru do jiné kategorie?<br>
+    Ještě není hotová funkce na mazání kategorií, která kategorii vymaže a zároveň zachová hry.</strong>
     <h2>Vytvoření nové kategorie:</h2>
 ';
-		/* line 5 */ $_tmp = $this->global->uiControl->getComponent("categoryForm");
+		/* line 7 */ $_tmp = $this->global->uiControl->getComponent("categoryForm");
 		if ($_tmp instanceof Nette\Application\UI\Renderable) $_tmp->redrawControl(null, false);
 		$_tmp->render();
 		echo '</div>
