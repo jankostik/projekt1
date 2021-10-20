@@ -102,9 +102,11 @@ class AdministrationPresenter extends BasePresenter
             {
                 if (empty($values->category_id)) { #nový záznam
                     $this->flashMessage("kategorie byla vytvořena");
+                    $this->redirect('Games:default');
                 } 
                 else{
                     $this->flashMessage("kategorie byla upravena");
+                    $this->redirect('Games:default');
                 }
             };
 
