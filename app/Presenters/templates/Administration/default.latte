@@ -1,0 +1,10 @@
+{block title}Administrace webu{/block}
+{block description}Administrace webu.{/block}
+{block content}
+<div class="content">
+    <p>Vítejte v administraci! Jste přihlášeni jako <b>{$username}</b>.</p>
+    <p n:if="!$user->isInRole('admin')">Nemáte administrátorská oprávnění, požádejte administrátora webu, aby vám je přidělil.</p>
+    <li><a class="admin" n:href=:Games:new>přidat novou hru</a></li>
+    <li><a class="admin" n:href=:Administration:newC>přidat novou kategorii</a></li>
+    <h2><a class="admin" n:href=logout>Odhlásit</a></h2>
+</div>

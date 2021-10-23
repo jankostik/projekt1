@@ -14,6 +14,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		echo '
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,46 +45,83 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 
 <body>
 	<header>
-		<ul>
+	<nav class="navbar">
+		<div class="max-width">
+		<div class="logo">
+          <a href="#">
+            <img src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 27 */;
+		echo '/css/images/Ellipse 1.png" alt="logo">
+            Logo</a
+          >
+        </div>
+			<ul class="menu">
+				<li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 32 */;
+		echo '">Úvod</a></li>
+				<div class="dropdown">
+					<button class="dropbtn">Kategorie</button>
+					<div class="dropdown-content">
 ';
 		$iterations = 0;
-		foreach ($menu as $item) /* line 24 */ {
-			echo '		<li>
-			<a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$item->category_url])) /* line 25 */;
+		foreach ($menu as $item) /* line 36 */ {
+			echo '						<li>
+							<a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$item->category_id])) /* line 37 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($item->category_title) /* line 25 */;
+			echo LR\Filters::escapeHtmlText($item->category_title) /* line 37 */;
 			echo '</a>
-		</li>
+';
+			if ($user->isInRole('admin')) /* line 38 */ {
+				echo '							<a class="editC" href="';
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Administration:editC", [$item->category_url])) /* line 39 */;
+				echo '"> - upravit kategorii</a>
+';
+			}
+			echo '						</li>
 ';
 			$iterations++;
 		}
+<<<<<<< HEAD
 		echo '		<li><a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Homepage:default")) /* line 27 */;
 		echo '">Úvod</a></li>
 		<li><a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Contact:default")) /* line 28 */;
+=======
+		echo '					</div>
+				</div>
+				<li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Contact:default")) /* line 44 */;
+>>>>>>> opravaForm
 		echo '">Kontakt</a></li>
-		</ul>
+				<li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Administration:default")) /* line 45 */;
+		echo '">Administrace</a></li>
+			</ul>
+		</div>
+	</nav>
 	</header>
-	<div class=container>
+	
 ';
 		$iterations = 0;
-		foreach ($flashes as $flash) /* line 32 */ {
+		foreach ($flashes as $flash) /* line 51 */ {
 			echo '		<div';
-			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 32 */;
+			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 51 */;
 			echo '>';
-			echo LR\Filters::escapeHtmlText($flash->message) /* line 32 */;
+			echo LR\Filters::escapeHtmlText($flash->message) /* line 51 */;
 			echo '</div>
 ';
 			$iterations++;
 		}
-		echo "\n";
-		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 34 */;
-		echo '	</div>
+		echo '		<div class="max-width">
+';
+		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 53 */;
+		echo '		</div>
+	
 
 ';
-		$this->renderBlock('scripts', get_defined_vars()) /* line 37 */;
+		$this->renderBlock('scripts', get_defined_vars()) /* line 57 */;
 		echo '
 </body>
 </html>
@@ -96,11 +134,10 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['item' => '24', 'flash' => '32'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['item' => '36', 'flash' => '51'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
-		$this->createTemplate('components/form.latte', $this->params, "import")->render() /* line 6 */;
 		Nette\Bridges\ApplicationLatte\UIRuntime::initialize($this, $this->parentName, $this->blocks);
 		
 	}
@@ -113,7 +150,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	}
 
 
-	/** {block scripts} on line 37 */
+	/** {block scripts} on line 57 */
 	public function blockScripts(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -122,7 +159,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 		echo '	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 	<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 40 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 60 */;
 		echo '/js/main.js"></script>
 ';
 	}

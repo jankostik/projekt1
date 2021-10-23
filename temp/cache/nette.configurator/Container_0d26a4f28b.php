@@ -11,15 +11,18 @@ class Container_0d26a4f28b extends Nette\DI\Container
 {
 	protected $tags = [
 		'nette.inject' => [
-			'07' => true,
+			'08' => true,
 			'application.1' => true,
 			'application.2' => true,
 			'application.3' => true,
 			'application.4' => true,
 			'application.5' => true,
 			'application.6' => true,
+<<<<<<< HEAD
 			'application.7' => true,
 			'application.8' => true,
+=======
+>>>>>>> opravaForm
 		],
 	];
 
@@ -31,6 +34,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 		'database.default' => 'database.default.connection',
 		'httpRequest' => 'http.request',
 		'httpResponse' => 'http.response',
+		'nette.authorizator' => 'security.authorizator',
 		'nette.database.default' => 'database.default',
 		'nette.database.default.context' => 'database.default.context',
 		'nette.httpRequestFactory' => 'http.requestFactory',
@@ -68,10 +72,12 @@ class Container_0d26a4f28b extends Nette\DI\Container
 		'Nette\Security\UserStorage' => [['security.userStorage']],
 		'Nette\Security\IUserStorage' => [['security.legacyUserStorage']],
 		'Nette\Security\User' => [['security.user']],
+		'Nette\Security\Authorizator' => [['security.authorizator']],
 		'Nette\Http\Session' => [['session.session']],
 		'Tracy\ILogger' => [['tracy.logger']],
 		'Tracy\BlueScreen' => [['tracy.blueScreen']],
 		'Tracy\Bar' => [['tracy.bar']],
+<<<<<<< HEAD
 		'Nette\Security\Authenticator' => [['01']],
 		'Nette\Security\IAuthenticator' => [['01']],
 		'App\Model\UserFacade' => [['01']],
@@ -108,15 +114,47 @@ class Container_0d26a4f28b extends Nette\DI\Container
 		'Nette\ComponentModel\Component' => [
 			2 => ['07', 'application.2', 'application.3', 'application.4', 'application.5', 'application.6'],
 		],
+=======
+		'Nette\Routing\RouteList' => [['router']],
+		'Nette\Routing\Router' => [['router']],
+		'ArrayAccess' => [2 => ['router', '08', 'application.2', 'application.3', 'application.4']],
+		'Countable' => [2 => ['router']],
+		'IteratorAggregate' => [2 => ['router']],
+		'Traversable' => [2 => ['router']],
+		'Nette\Application\Routers\RouteList' => [['router']],
+		'Nette\Security\Authenticator' => [['authenticator']],
+		'Nette\Security\IAuthenticator' => [['authenticator']],
+		'App\Model\UserManager' => [['authenticator']],
+		'App\Forms\FormFactory' => [['01']],
+		'App\Forms\SignInFormFactory' => [['02']],
+		'App\Forms\SignUpFormFactory' => [['03']],
+		'App\Model\Data\GameFormFactory' => [['04']],
+		'App\Model\Data\CategoryFormFactory' => [['05']],
+		'App\Model\Data\FormFactory' => [['06']],
+		'App\Model\DatabaseManager' => [['07']],
+		'App\Model\DatabaseFunctions' => [['07']],
+		'App\Presenters\BasePresenter' => [2 => ['08', 'application.2', 'application.3', 'application.4']],
+		'Nette\Application\UI\Presenter' => [2 => ['08', 'application.2', 'application.3', 'application.4']],
+		'Nette\Application\UI\Control' => [2 => ['08', 'application.2', 'application.3', 'application.4']],
+		'Nette\Application\UI\Component' => [2 => ['08', 'application.2', 'application.3', 'application.4']],
+		'Nette\ComponentModel\Container' => [2 => ['08', 'application.2', 'application.3', 'application.4']],
+		'Nette\ComponentModel\Component' => [2 => ['08', 'application.2', 'application.3', 'application.4']],
+		'Nette\ComponentModel\IComponent' => [2 => ['08', 'application.2', 'application.3', 'application.4']],
+		'Nette\ComponentModel\IContainer' => [2 => ['08', 'application.2', 'application.3', 'application.4']],
+		'Nette\Application\UI\SignalReceiver' => [2 => ['08', 'application.2', 'application.3', 'application.4']],
+		'Nette\Application\UI\StatePersistent' => [2 => ['08', 'application.2', 'application.3', 'application.4']],
+		'Nette\Application\UI\Renderable' => [2 => ['08', 'application.2', 'application.3', 'application.4']],
+>>>>>>> opravaForm
 		'Nette\Application\IPresenter' => [
 			2 => [
-				'07',
+				'08',
 				'application.1',
 				'application.2',
 				'application.3',
 				'application.4',
 				'application.5',
 				'application.6',
+<<<<<<< HEAD
 				'application.7',
 				'application.8',
 			],
@@ -144,6 +182,17 @@ class Container_0d26a4f28b extends Nette\DI\Container
 		'App\Presenters\HomepagePresenter' => [2 => ['application.6']],
 		'NetteModule\ErrorPresenter' => [2 => ['application.7']],
 		'NetteModule\MicroPresenter' => [2 => ['application.8']],
+=======
+			],
+		],
+		'App\Presenters\ContactPresenter' => [2 => ['08']],
+		'App\Presenters\ErrorPresenter' => [2 => ['application.1']],
+		'App\Presenters\AdministrationPresenter' => [2 => ['application.2']],
+		'App\Presenters\Error4xxPresenter' => [2 => ['application.3']],
+		'App\Presenters\GamesPresenter' => [2 => ['application.4']],
+		'NetteModule\ErrorPresenter' => [2 => ['application.5']],
+		'NetteModule\MicroPresenter' => [2 => ['application.6']],
+>>>>>>> opravaForm
 		'Nette\Forms\FormFactory' => [['forms.factory']],
 	];
 
@@ -164,55 +213,63 @@ class Container_0d26a4f28b extends Nette\DI\Container
 	}
 
 
-	public function createService01(): App\Model\UserFacade
-	{
-		return new App\Model\UserFacade($this->getService('database.default.context'), $this->getService('security.passwords'));
-	}
-
-
-	public function createService02(): App\Forms\FormFactory
+	public function createService01(): App\Forms\FormFactory
 	{
 		return new App\Forms\FormFactory;
 	}
 
 
-	public function createService03(): App\Forms\SignInFormFactory
+	public function createService02(): App\Forms\SignInFormFactory
 	{
-		return new App\Forms\SignInFormFactory($this->getService('02'), $this->getService('security.user'));
+		return new App\Forms\SignInFormFactory($this->getService('01'), $this->getService('security.user'));
 	}
 
 
-	public function createService04(): App\Forms\SignUpFormFactory
+	public function createService03(): App\Forms\SignUpFormFactory
 	{
-		return new App\Forms\SignUpFormFactory($this->getService('02'), $this->getService('01'));
+		return new App\Forms\SignUpFormFactory($this->getService('01'), $this->getService('authenticator'));
 	}
 
 
-	public function createService05(): Nette\Application\Routers\RouteList
+	public function createService04(): App\Model\Data\GameFormFactory
 	{
-		return App\Router\RouterFactory::createRouter();
+		return new App\Model\Data\GameFormFactory($this->getService('06'), $this->getService('07'));
 	}
 
 
-	public function createService06(): App\Model\DatabaseFunctions
+	public function createService05(): App\Model\Data\CategoryFormFactory
+	{
+		return new App\Model\Data\CategoryFormFactory($this->getService('06'), $this->getService('07'));
+	}
+
+
+	public function createService06(): App\Model\Data\FormFactory
+	{
+		return new App\Model\Data\FormFactory;
+	}
+
+
+	public function createService07(): App\Model\DatabaseFunctions
 	{
 		return new App\Model\DatabaseFunctions($this->getService('database.default.context'));
 	}
 
 
-	public function createService07(): App\Presenters\ContactPresenter
+	public function createService08(): App\Presenters\ContactPresenter
 	{
 		$service = new App\Presenters\ContactPresenter('jan.kostik5@gmail.com', $this->getService('mail.mailer'));
 		$service->injectPrimary(
 			$this,
 			$this->getService('application.presenterFactory'),
-			$this->getService('05'),
+			$this->getService('router'),
 			$this->getService('http.request'),
 			$this->getService('http.response'),
 			$this->getService('session.session'),
 			$this->getService('security.user'),
 			$this->getService('latte.templateFactory')
 		);
+		$service->injectFormFactory($this->getService('01'));
+		$service->injectDatabaseFunctions($this->getService('07'));
 		$service->invalidLinkMode = 5;
 		return $service;
 	}
@@ -224,6 +281,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 	}
 
 
+<<<<<<< HEAD
 	public function createServiceApplication__2(): App\Presenters\MenuPresenter
 	{
 		$service = new App\Presenters\MenuPresenter($this->getService('06'));
@@ -243,36 +301,48 @@ class Container_0d26a4f28b extends Nette\DI\Container
 
 
 	public function createServiceApplication__3(): App\Presenters\Error4xxPresenter
+=======
+	public function createServiceApplication__2(): App\Presenters\AdministrationPresenter
+>>>>>>> opravaForm
 	{
-		$service = new App\Presenters\Error4xxPresenter;
+		$service = new App\Presenters\AdministrationPresenter($this->getService('02'), $this->getService('03'));
 		$service->injectPrimary(
 			$this,
 			$this->getService('application.presenterFactory'),
-			$this->getService('05'),
+			$this->getService('router'),
 			$this->getService('http.request'),
 			$this->getService('http.response'),
 			$this->getService('session.session'),
 			$this->getService('security.user'),
 			$this->getService('latte.templateFactory')
 		);
+		$service->injectFormFactory($this->getService('01'));
+		$service->injectDatabaseFunctions($this->getService('07'));
+		$service->categoryFormFactory = $this->getService('05');
 		$service->invalidLinkMode = 5;
 		return $service;
 	}
 
 
+<<<<<<< HEAD
 	public function createServiceApplication__4(): App\Presenters\SignPresenter
+=======
+	public function createServiceApplication__3(): App\Presenters\Error4xxPresenter
+>>>>>>> opravaForm
 	{
-		$service = new App\Presenters\SignPresenter($this->getService('03'), $this->getService('04'));
+		$service = new App\Presenters\Error4xxPresenter;
 		$service->injectPrimary(
 			$this,
 			$this->getService('application.presenterFactory'),
-			$this->getService('05'),
+			$this->getService('router'),
 			$this->getService('http.request'),
 			$this->getService('http.response'),
 			$this->getService('session.session'),
 			$this->getService('security.user'),
 			$this->getService('latte.templateFactory')
 		);
+		$service->injectFormFactory($this->getService('01'));
+		$service->injectDatabaseFunctions($this->getService('07'));
 		$service->invalidLinkMode = 5;
 		return $service;
 	}
@@ -280,6 +350,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 
 	public function createServiceApplication__5(): App\Presenters\GamesPresenter
 	{
+<<<<<<< HEAD
 		$service = new App\Presenters\GamesPresenter($this->getService('06'));
 		$service->injectPrimary(
 			$this,
@@ -299,30 +370,44 @@ class Container_0d26a4f28b extends Nette\DI\Container
 	public function createServiceApplication__6(): App\Presenters\HomepagePresenter
 	{
 		$service = new App\Presenters\HomepagePresenter($this->getService('06'));
+=======
+		$service = new App\Presenters\GamesPresenter;
+>>>>>>> opravaForm
 		$service->injectPrimary(
 			$this,
 			$this->getService('application.presenterFactory'),
-			$this->getService('05'),
+			$this->getService('router'),
 			$this->getService('http.request'),
 			$this->getService('http.response'),
 			$this->getService('session.session'),
 			$this->getService('security.user'),
 			$this->getService('latte.templateFactory')
 		);
+		$service->injectFormFactory($this->getService('01'));
+		$service->injectDatabaseFunctions($this->getService('07'));
+		$service->gameFormFactory = $this->getService('04');
 		$service->invalidLinkMode = 5;
 		return $service;
 	}
 
 
+<<<<<<< HEAD
 	public function createServiceApplication__7(): NetteModule\ErrorPresenter
+=======
+	public function createServiceApplication__5(): NetteModule\ErrorPresenter
+>>>>>>> opravaForm
 	{
 		return new NetteModule\ErrorPresenter($this->getService('tracy.logger'));
 	}
 
 
+<<<<<<< HEAD
 	public function createServiceApplication__8(): NetteModule\MicroPresenter
+=======
+	public function createServiceApplication__6(): NetteModule\MicroPresenter
+>>>>>>> opravaForm
 	{
-		return new NetteModule\MicroPresenter($this, $this->getService('http.request'), $this->getService('05'));
+		return new NetteModule\MicroPresenter($this, $this->getService('http.request'), $this->getService('router'));
 	}
 
 
@@ -330,7 +415,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 	{
 		$service = new Nette\Application\Application(
 			$this->getService('application.presenterFactory'),
-			$this->getService('05'),
+			$this->getService('router'),
 			$this->getService('http.request'),
 			$this->getService('http.response')
 		);
@@ -341,7 +426,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 			$service
 		);
 		$this->getService('tracy.bar')->addPanel(new Nette\Bridges\ApplicationTracy\RoutingPanel(
-			$this->getService('05'),
+			$this->getService('router'),
 			$this->getService('http.request'),
 			$this->getService('application.presenterFactory')
 		));
@@ -352,7 +437,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 	public function createServiceApplication__linkGenerator(): Nette\Application\LinkGenerator
 	{
 		return new Nette\Application\LinkGenerator(
-			$this->getService('05'),
+			$this->getService('router'),
 			$this->getService('http.request')->getUrl()->withoutUserInfo(),
 			$this->getService('application.presenterFactory')
 		);
@@ -371,6 +456,12 @@ class Container_0d26a4f28b extends Nette\DI\Container
 	}
 
 
+	public function createServiceAuthenticator(): App\Model\UserManager
+	{
+		return new App\Model\UserManager($this->getService('database.default.context'), $this->getService('security.passwords'));
+	}
+
+
 	public function createServiceCache__storage(): Nette\Caching\Storage
 	{
 		return new Nette\Caching\Storages\FileStorage('/var/www/sites/Nette/projekt1/temp/cache');
@@ -385,7 +476,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 
 	public function createServiceDatabase__default__connection(): Nette\Database\Connection
 	{
-		$service = new Nette\Database\Connection('mysql:host=127.0.0.1;dbname=offline_zabava', 'root', 'Bl10_10Ji', ['lazy' => true]);
+		$service = new Nette\Database\Connection('mysql:host=127.0.0.1;dbname=offline_zabava02', 'root', 'Bl10_10Ji', ['lazy' => true]);
 		Nette\Database\Helpers::initializeTracy(
 			$service,
 			true,
@@ -493,6 +584,36 @@ class Container_0d26a4f28b extends Nette\DI\Container
 	}
 
 
+	public function createServiceRouter(): Nette\Application\Routers\RouteList
+	{
+		return App\Router\RouterFactory::createRouter();
+	}
+
+
+	public function createServiceSecurity__authorizator(): Nette\Security\Authorizator
+	{
+		$service = new Nette\Security\Permission;
+		$service->addRole('guest', null);
+		$service->addRole('member', ['guest']);
+		$service->addRole('admin', null);
+		$service->addResource('Error');
+		$service->allow('admin');
+		$service->allow('guest', 'Error');
+		$service->addResource('Administration');
+		$service->addResource('Games');
+		$service->addResource('Contact');
+		$service->allow('guest', 'Administration', 'login');
+		$service->allow('guest', 'Administration', 'register');
+		$service->allow('guest', 'Games', 'default');
+		$service->allow('guest', 'Games', 'list');
+		$service->allow('guest', 'Games', 'show');
+		$service->allow('guest', 'Contact');
+		$service->allow('member', 'Administration', 'default');
+		$service->allow('member', 'Administration', 'logout');
+		return $service;
+	}
+
+
 	public function createServiceSecurity__legacyUserStorage(): Nette\Security\IUserStorage
 	{
 		return new Nette\Http\UserStorage($this->getService('session.session'));
@@ -509,8 +630,8 @@ class Container_0d26a4f28b extends Nette\DI\Container
 	{
 		$service = new Nette\Security\User(
 			$this->getService('security.legacyUserStorage'),
-			$this->getService('01'),
-			null,
+			$this->getService('authenticator'),
+			$this->getService('security.authorizator'),
 			$this->getService('security.userStorage')
 		);
 		$this->getService('tracy.bar')->addPanel(new Nette\Bridges\SecurityTracy\UserPanel($service));

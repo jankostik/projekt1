@@ -6,12 +6,55 @@ namespace App\Presenters;
 
 use App\Presenters\MenuPresenter;
 use App\Model\DatabaseFunctions;
+use App\Model\Data\GameFormFactory;
 
 class GamesPresenter extends MenuPresenter
 {
 
+    
 
-    public function renderList($category_url)
+    /** @var GameFormFactory @inject */
+	public $gameFormFactory;
+
+    public function actionNew()
+    {
+        $this['gameForm']->addSubmit('save', 'přidat hru');
+    }
+
+
+    public function actionEdit($url)
+    {
+        $this['gameForm']->addSubmit('edit', 'upravit hru');
+        $this['gameForm']->setDefaults($this->databaseFunctions->getGame($url));
+    }
+
+
+    protected function createComponentGameForm()
+    {
+        $form = $this->gameFormFactory->create();
+
+        $form->onSuccess['afterSave'] =
+            function($form, $values)
+            {
+                if (empty($values->game_id)) { #nový záznam
+                    $this->redirect('Games:show', $values->game_url );
+                    $this->flashMessage("hra byla vytvořena");
+                } 
+                else{
+                    $this->flashMessage("hra byla upravena");
+                    $this->redirect('Games:show', $values->game_url );
+                }
+            };
+
+        return $form;
+    }
+
+
+
+
+
+    /**funkce pro vykreslováni obsahu */
+      public function renderList($category_url)
     {
         $this->template->gamesList = $this->databaseFunctions->getGamesByCategory($category_url);
     }
@@ -21,44 +64,13 @@ class GamesPresenter extends MenuPresenter
         $this->template->game = $this->databaseFunctions->getGame($game_url);
     }
     //až vše bude fungovat tak, ať je možnost i mazaz a upravovat kategorie
-    public function actionRemove($category_url, string $url = null)
+    public function actionRemove(string $url = null, $category_id)
     {
-        $this->DatabaseFunctions->removeGame($url);
+        $this->databaseFunctions->removeGame($url);
         $this->flashMessage('Hra Byla úspěšně odstraněna');
-        $this->redirect('Games:list $category_url');
+        $this->redirect('Games:list', $category_id);
     }
 
-    public function actionEditor(string $url = null)
-    {
-        if ($url) {
-            if (!($game = $this->DatabaseFunctions->getGame($url)))
-                $this->flashMessage('Hra nebyla nalezena.');
-            else $this['editForm']->setDefaults($game);
-        }
-    }
-
-    protected function createComponentEditorForm()
-    {
-        // Vytvoření formuláře a definice jeho polí.
-        $form = new Form;
-        $form->addHidden('article_id');
-        $form->addText('title', 'Titulek')->setRequired();
-        $form->addText('url', 'URL')->setRequired();
-        $form->addText('description', 'Popisek')->setRequired();
-        $form->addTextArea('content', 'Obsah');
-        $form->addSubmit('save', 'Uložit článek');
-
-        // Funkce se vykonaná při úspěšném odeslání formuláře a zpracuje zadané hodnoty.
-        $form->onSuccess[] = function (Form $form, ArrayHash $values) {
-            try {
-                $this->articleManager->saveArticle($values);
-                $this->flashMessage('Článek byl úspěšně uložen.');
-                $this->redirect('Article:', $values->url);
-            } catch (UniqueConstraintViolationException $e) {
-                $this->flashMessage('Článek s touto URL adresou již existuje.');
-            }
-        };
-
-        return $form;
-    }
+   
+    
 }

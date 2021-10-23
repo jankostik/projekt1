@@ -3,7 +3,7 @@
  * @param array    $flashes  flash messages
  *}
 
-{import 'components/form.latte'}
+
 
 <!DOCTYPE html>
 <html>
@@ -20,6 +20,7 @@
 
 <body>
 	<header>
+<<<<<<< HEAD
 		<ul>
 		<li n:foreach="$menu as $item">
 			<a n:href="Games:list $item->category_url">{$item->category_title}</a>
@@ -27,12 +28,41 @@
 		<li><a n:href=:Homepage:default>Úvod</a></li>
 		<li><a n:href=:Contact:default>Kontakt</a></li>
 		</ul>
+=======
+	<nav class="navbar">
+		<div class="max-width">
+		<div class="logo">
+          <a href="#">
+            <img src="{$basePath}/css/images/Ellipse 1.png" alt="logo" />
+            Logo</a
+          >
+        </div>
+			<ul class="menu">
+				<li><a n:href=Games:default>Úvod</a></li>
+				<div class="dropdown">
+					<button class="dropbtn">Kategorie</button>
+					<div class="dropdown-content">
+						<li n:foreach="$menu as $item">
+							<a n:href="Games:list $item->category_id">{$item->category_title}</a>
+							{if $user->isInRole('admin')}
+							<a class="editC" n:href="Administration:editC $item->category_url"> - upravit kategorii</a>
+							{/if}
+						</li>
+					</div>
+				</div>
+				<li><a n:href=:Contact:default>Kontakt</a></li>
+				<li><a n:href=:Administration:default>Administrace</a></li>
+			</ul>
+		</div>
+	</nav>
+>>>>>>> opravaForm
 	</header>
-	<div class=container>
+	
 		<div n:foreach="$flashes as $flash" n:class="alert, 'alert-' . $flash->type">{$flash->message}</div>
-
-		{include content}
-	</div>
+		<div class="max-width">
+			{include content}
+		</div>
+	
 
 	{block scripts}
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

@@ -37,8 +37,21 @@ final class Template82b9cf73d1 extends Latte\Runtime\Template
 	/** {block content} on line 1 */
 	public function blockContent(array $ʟ_args): void
 	{
+<<<<<<< HEAD
 		echo '<p>Kontaktujte nás odesláním formuláře níže.</p>
 ';
+=======
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+		echo '<div class="content">
+    <p>Kontaktujte nás odesláním formuláře níže.</p>
+';
+		/* line 7 */ $_tmp = $this->global->uiControl->getComponent("contactForm");
+		if ($_tmp instanceof Nette\Application\UI\Renderable) $_tmp->redrawControl(null, false);
+		$_tmp->render();
+		echo '</div>';
+>>>>>>> opravaForm
 	}
 
 }

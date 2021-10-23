@@ -13,7 +13,6 @@ final class Template05c7460031 extends Latte\Runtime\Template
 	public function main(): array
 	{
 		extract($this->params);
-		echo '{';
 		if ($this->getParentName()) {
 			return get_defined_vars();
 		}
@@ -26,7 +25,7 @@ final class Template05c7460031 extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['game' => '2'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['game' => '3'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -41,22 +40,46 @@ final class Template05c7460031 extends Latte\Runtime\Template
 		extract($this->params);
 		extract($ʟ_args);
 		unset($ʟ_args);
+		echo '<div class="content">
+';
 		$iterations = 0;
-		foreach ($gamesList as $game) /* line 2 */ {
-			echo '<ul>
-	<li><a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:show", [$game->game_url])) /* line 3 */;
+		foreach ($gamesList as $game) /* line 3 */ {
+			echo '	<ul>
+		<li><a class="list" href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:show", [$game->game_url])) /* line 4 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($game->game_title) /* line 3 */;
+			echo LR\Filters::escapeHtmlText($game->game_title) /* line 4 */;
 			echo '</a></li>
-	<li><strong>';
-			echo LR\Filters::escapeHtmlText($game->game_description) /* line 4 */;
+		<div class="line"></div>
+		<li><strong>';
+			echo LR\Filters::escapeHtmlText($game->game_description) /* line 6 */;
 			echo '</strong></li>
-</ul>
+';
+			if ($user->isInRole('admin')) /* line 7 */ {
+				echo '		<a href="';
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:edit", [$game->game_url])) /* line 8 */;
+				echo '">upravit hru</a>
+		<a href="';
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("remove", [$game->game_url, $game->category_id])) /* line 9 */;
+				echo '">Odstranit</a>
+';
+			}
+			echo '	</ul>
 ';
 			$iterations++;
 		}
-		
+		if ($user->isInRole('admin')) /* line 12 */ {
+			echo '	<a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:new")) /* line 13 */;
+			echo '">vytvořit novou hru</a>
+';
+		}
+		echo '	<br>
+	<a class="zpet" href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 16 */;
+		echo '">zpět</a>
+</div>
+';
 	}
 
 }

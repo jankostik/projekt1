@@ -20,10 +20,12 @@ class DatabaseFunctions extends DatabaseManager
         //konstanty pro hry
         GAME_TABLE = 'games',
         GAME_URL = 'game_url',
+        GAME_ID = "game_id",
 
         //konstanty pro kategorie
         CATEGORY_TABLE = 'categories',
-        CATEGORY_URL = 'category_url';
+        CATEGORY_URL = 'category_url',
+        CATEGORY_ID = 'category_id';
 
 
     //získá všechny hry z tabulky
@@ -39,23 +41,22 @@ class DatabaseFunctions extends DatabaseManager
         return $this->database->table(self::GAME_TABLE)->where(self::GAME_URL, $url)->fetch();
     }
 
-    public function getGamesByCategory($category_url)
+    public function getGamesByCategory($category_id)
     {
-        return $this->database->table(self::GAME_TABLE)->where(self::CATEGORY_URL, $category_url);
+        return $this->database->table(self::GAME_TABLE)->where(self::CATEGORY_ID, $category_id);
     }
 
 
     //uloží nebo updatuje hru
     public function saveGame(ArrayHash $games)
     {
-        if(empty($games[self::GAME_URL])){
-            unset($games[self::GAME_URL]);
-            $this->database->table(self::GAME_TABLE)->insert($games);
-        } else {
-            $this->database->table(self::GAME_TABLE)->where(self::GAME_URL, $games[self::GAME_URL])->update($games);
-        }
+        $this->database->table(self::GAME_TABLE)->insert($games);
     }
 
+    public function editGame(ArrayHash $games)
+    {
+        $this->database->table(self::GAME_TABLE)->where(self::GAME_ID, $games[self::GAME_ID])->update($games);
+    }
 
     //vymaže hru
     public function removeGame(string $url)
@@ -67,5 +68,26 @@ class DatabaseFunctions extends DatabaseManager
     public function getCategories()
     {
         return $this->database->table(self::CATEGORY_TABLE)->order(self::CATEGORY_URL);
+    }
+
+    public function getCategoriesAssoc()
+    {
+        return $this->getcategories()->fetchAssoc('category_id=category_url');
+    }
+
+    public function saveCategory($category)
+    {
+        $this->database->table(self::CATEGORY_TABLE)->insert($category);
+    }
+
+    public function editCategory(ArrayHash $category)
+    {
+        //$this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_URL, $category[self::CATEGORY_URL])->update($category);
+        $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_ID, $category[self::CATEGORY_ID])->update($category);
+    }
+
+    public function getCategory($url)
+    {
+        return $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_URL, $url)->fetch();
     }
 }
