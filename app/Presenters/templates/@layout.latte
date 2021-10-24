@@ -20,30 +20,35 @@
 
 <body>
 	<header>
+
 	<nav class="navbar">
 		<div class="max-width">
-		<div class="logo">
-          <a href="#">
-            <img src="{$basePath}/css/images/Ellipse 1.png" alt="logo" />
-            Logo</a
-          >
-        </div>
-			<ul class="menu">
-				<li><a n:href=Games:default>Úvod</a></li>
-				<div class="dropdown">
-					<button class="dropbtn">Kategorie</button>
-					<div class="dropdown-content">
-						<li n:foreach="$menu as $item">
-							<a n:href="Games:list $item->category_id">{$item->category_title}</a>
-							{if $user->isInRole('admin')}
-							<a class="editC" n:href="Administration:editC $item->category_url"> - upravit kategorii</a>
-							{/if}
-						</li>
+				<ul class="menu">
+					<div class="logo">
+						<a href="#">
+							<img src="{$basePath}/css/images/Ellipse 1.png" alt="logo" />
+							Logo
+						</a>
 					</div>
-				</div>
-				<li><a n:href=:Contact:default>Kontakt</a></li>
-				<li><a n:href=:Administration:default>Administrace</a></li>
-			</ul>
+					
+					<div class="menu-li">
+					<li><a n:href=Games:default>Úvod</a></li>
+						<div class="dropdown">
+							<button class="dropbtn">Kategorie</button>
+							<div class="dropdown-content">
+								<li n:foreach="$menu as $item">
+									<a n:href="Games:list $item->category_id, $item->category_title">{$item->category_title}</a>
+									{if $user->isInRole('admin')}
+									<a class="editC" n:href="Administration:editC $item->category_url"> - upravit kategorii</a>
+									{/if}
+								</li>
+							</div>
+						</div>
+						<li><a n:href=:Contact:default>Kontakt</a></li>
+						<li><a n:href=:Administration:default>Administrace</a></li>
+					</div>
+				</ul>
+			
 		</div>
 	</nav>
 	</header>

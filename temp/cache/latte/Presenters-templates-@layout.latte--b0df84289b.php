@@ -45,75 +45,80 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 
 <body>
 	<header>
+
 	<nav class="navbar">
 		<div class="max-width">
-		<div class="logo">
-          <a href="#">
-            <img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 27 */;
+				<ul class="menu">
+					<div class="logo">
+						<a href="#">
+							<img src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 29 */;
 		echo '/css/images/Ellipse 1.png" alt="logo">
-            Logo</a
-          >
-        </div>
-			<ul class="menu">
-				<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 32 */;
+							Logo
+						</a>
+					</div>
+					
+					<div class="menu-li">
+					<li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:default")) /* line 35 */;
 		echo '">Úvod</a></li>
-				<div class="dropdown">
-					<button class="dropbtn">Kategorie</button>
-					<div class="dropdown-content">
+						<div class="dropdown">
+							<button class="dropbtn">Kategorie</button>
+							<div class="dropdown-content">
 ';
 		$iterations = 0;
-		foreach ($menu as $item) /* line 36 */ {
-			echo '						<li>
-							<a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$item->category_id])) /* line 37 */;
+		foreach ($menu as $item) /* line 39 */ {
+			echo '								<li>
+									<a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$item->category_id, $item->category_title])) /* line 40 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($item->category_title) /* line 37 */;
+			echo LR\Filters::escapeHtmlText($item->category_title) /* line 40 */;
 			echo '</a>
 ';
-			if ($user->isInRole('admin')) /* line 38 */ {
-				echo '							<a class="editC" href="';
-				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Administration:editC", [$item->category_url])) /* line 39 */;
+			if ($user->isInRole('admin')) /* line 41 */ {
+				echo '									<a class="editC" href="';
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Administration:editC", [$item->category_url])) /* line 42 */;
 				echo '"> - upravit kategorii</a>
 ';
 			}
-			echo '						</li>
+			echo '								</li>
 ';
 			$iterations++;
 		}
-		echo '					</div>
-				</div>
-				<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Contact:default")) /* line 44 */;
+		echo '							</div>
+						</div>
+						<li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Contact:default")) /* line 47 */;
 		echo '">Kontakt</a></li>
-				<li><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Administration:default")) /* line 45 */;
+						<li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Administration:default")) /* line 48 */;
 		echo '">Administrace</a></li>
-			</ul>
+					</div>
+				</ul>
+			
 		</div>
 	</nav>
 	</header>
 	
 ';
 		$iterations = 0;
-		foreach ($flashes as $flash) /* line 51 */ {
+		foreach ($flashes as $flash) /* line 56 */ {
 			echo '		<div';
-			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 51 */;
+			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 56 */;
 			echo '>';
-			echo LR\Filters::escapeHtmlText($flash->message) /* line 51 */;
+			echo LR\Filters::escapeHtmlText($flash->message) /* line 56 */;
 			echo '</div>
 ';
 			$iterations++;
 		}
 		echo '		<div class="max-width">
 ';
-		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 53 */;
+		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 58 */;
 		echo '		</div>
 	
 
 ';
-		$this->renderBlock('scripts', get_defined_vars()) /* line 57 */;
+		$this->renderBlock('scripts', get_defined_vars()) /* line 62 */;
 		echo '
 </body>
 </html>
@@ -126,7 +131,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['item' => '36', 'flash' => '51'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['item' => '39', 'flash' => '56'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -142,7 +147,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	}
 
 
-	/** {block scripts} on line 57 */
+	/** {block scripts} on line 62 */
 	public function blockScripts(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -151,7 +156,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 		echo '	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 	<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 60 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 65 */;
 		echo '/js/main.js"></script>
 ';
 	}

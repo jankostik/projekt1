@@ -32,22 +32,24 @@ final class Templated7ec939585 extends Latte\Runtime\Template
 	/** {block content} on line 3 */
 	public function blockContent(array $ʟ_args): void
 	{
-		echo '<div class="uvod">
+		echo '<div class="content">
     <h1>Nejlepší hry:</h1>
-    <p>
-    Zatím se připravuje ...
-    <br>
-    <br>
-    Jinak vše v menu je  funkční. Co se týče nejlepších her,
-    tak musím udělat hodnocení her.
-    A poté nejlepší hry zobrazím zde. Všechno ostatní co je napsané v php je  funkční.
-<br>
-<br>
-    - zobrazení her<br>
-    - asministrace her<br>
-    - přihlášení/registrace<br>
-    - kontakt<br>
-    </p>
+    <div class="container">
+            <p>
+            Zatím se připravuje ...
+            <br>
+            <br>
+            Jinak vše v menu je  funkční. Co se týče nejlepších her,
+            tak musím udělat hodnocení her.
+            A poté nejlepší hry zobrazím zde. Všechno ostatní co je napsané v php je  funkční.
+            <br>
+            <br>
+            - zobrazení her<br>
+            - asministrace her<br>
+            - přihlášení/registrace<br>
+            - kontakt<br>
+            </p>
+    </div>
 </div>';
 	}
 
