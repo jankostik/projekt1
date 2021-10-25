@@ -3,11 +3,10 @@
     <div class="container">
         <h1>{$game->game_title}</h1>
         <p class="text">{$game->game_text}</p>
-        <br>
         <div class="line"></div>
         <strong>{$game->game_description}</strong>
     </div>
-<a class="zpet" n:href="Games:list $game->category_id">zpět</a>
+<a class="zpet" n:href="Games:list $game->category_id, $category_title">zpět</a>
 </div>
 
 {/block}}

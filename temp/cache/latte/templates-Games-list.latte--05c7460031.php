@@ -49,13 +49,13 @@ final class Template05c7460031 extends Latte\Runtime\Template
 		$iterations = 0;
 		foreach ($gamesList as $game) /* line 5 */ {
 			echo '		<ul>
-			<li><a class="list" href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:show", [$game->game_url])) /* line 6 */;
+			<li><a href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:show", [$game->game_url, $category_title])) /* line 6 */;
 			echo '">';
 			echo LR\Filters::escapeHtmlText($game->game_title) /* line 6 */;
 			echo '</a></li>
 			<div class="line"></div>
-			<li><strong>';
+			<li><strong class="description">';
 			echo LR\Filters::escapeHtmlText($game->game_description) /* line 8 */;
 			echo '</strong></li>
 ';

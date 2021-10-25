@@ -59,9 +59,10 @@ class GamesPresenter extends BasePresenter
         $this->template->category_title = $category_title;
     }
 
-    public function renderShow($game_url)
+    public function renderShow($game_url, $category_title)
     {
         $this->template->game = $this->databaseFunctions->getGame($game_url);
+        $this->template->category_title = $category_title;
     }
     //až vše bude fungovat tak, ať je možnost i mazaz a upravovat kategorie
     public function actionRemove(string $url = null, $category_id)
