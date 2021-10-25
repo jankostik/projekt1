@@ -179,6 +179,8 @@ p{
 
 .container ul{
 	margin-bottom: 50px;
+	display: flex;
+	flex-direction: column;
 }
 
 strong{
@@ -196,4 +198,19 @@ strong{
 
 .zpet:hover {
 	color: rgb(103, 175, 77);
+}
+
+.container .edit-tags{
+	display: flex;
+}
+
+.container .edit {
+	margin-top: 10px;
+	margin-left: 10px;
+	font-size: 18px;
+	color: rgb(103, 175, 77);
+}
+
+.container .edit:hover{
+	color: rgb(46, 128, 17);
 }
