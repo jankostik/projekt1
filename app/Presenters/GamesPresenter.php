@@ -70,8 +70,9 @@ class GamesPresenter extends BasePresenter
     public function actionRemove(string $url = null, $category_id)
     {
         $this->databaseFunctions->removeGame($url);
+        $category = $this->databaseFunctions->getCategoryById($category_id);
         $this->flashMessage('Hra Byla úspěšně odstraněna');
-        $this->redirect('Games:list', $category_id);
+        $this->redirect('Games:list', $category_id, $category->category_title);
     }
 
    
