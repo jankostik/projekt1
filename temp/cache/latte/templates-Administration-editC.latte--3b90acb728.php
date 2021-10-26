@@ -36,7 +36,7 @@ final class Template3b90acb728 extends Latte\Runtime\Template
 		extract($ʟ_args);
 		unset($ʟ_args);
 		echo '<div class="content">
-    <h2>Úprava kategorie:</h2>
+        <h1>Úprava kategorie:</h1>
 ';
 		/* line 5 */ $_tmp = $this->global->uiControl->getComponent("categoryForm");
 		if ($_tmp instanceof Nette\Application\UI\Renderable) $_tmp->redrawControl(null, false);

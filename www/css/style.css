@@ -257,3 +257,11 @@ td textarea {
 	height: 100px;
 	margin-bottom: 20px;
 }
+
+td select {
+	margin-bottom: 20px;
+}
+
+th label {
+	margin-bottom: 20px;
+}
