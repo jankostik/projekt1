@@ -93,6 +93,6 @@ class DatabaseFunctions extends DatabaseManager
 
     public function getCategoryById ($category_id)
     {
-        return $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_ID, $category_id);
+        return $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_ID, $category_id)->fetch();
     }
 }

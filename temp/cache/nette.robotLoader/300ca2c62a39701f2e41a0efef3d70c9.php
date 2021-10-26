@@ -105,7 +105,7 @@ return array (
     'App\\Presenters\\GamesPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/GamesPresenter.php',
-      1 => 1635143172,
+      1 => 1635226437,
     ),
   ),
   1 => 
@@ -137,6 +137,7 @@ return array (
     'App\\Presenters\\AdministrationLoginTemplate' => 3,
     'App\\Presenters\\AdministrationRegisterTemplate' => 3,
     'App\\Presenters\\GamesRemoveTemplate' => 3,
+    'App\\Presenters\\GaPresenter' => 2,
   ),
   2 => 
   array (

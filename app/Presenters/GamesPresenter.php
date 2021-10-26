@@ -36,9 +36,10 @@ class GamesPresenter extends BasePresenter
             function($form, $values)
             {
                 if (empty($values->game_id)) { #nový záznam
-                    $category_title = $this->databaseFunctions->getCategoryById($values->category_id);
-                    $this->redirect('Games:show', $values->game_url, $category_title);
-                    $this->flashMessage("hra byla vytvořena ");
+                    $category = $this->databaseFunctions->getCategoryById($values->category_id);
+                    $this->flashMessage("hra byla vytvořena");
+                    $this->redirect('Games:show', $values->game_url, $category->category_title);
+                    
                 } 
                 else{
                     $this->flashMessage("hra byla upravena");
