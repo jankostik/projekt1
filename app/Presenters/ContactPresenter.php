@@ -33,10 +33,10 @@ class ContactPresenter extends BasePresenter
     {
         $form = new Form;
         $form->getElementPrototype()->setAttribute('novalidate', true);
-        $form->addEmail('email', 'Vaše emailová adresa')->setRequired();
-        $form->addText('y', 'Zadejte aktuální rok')->setOmitted()->setRequired()
+        $form->addEmail('email', 'Vaše emailová adresa:')->setRequired();
+        $form->addText('y', 'Zadejte aktuální rok:')->setOmitted()->setRequired()
             ->addRule(Form::EQUAL, 'Chybně vyplněný antispam.', date("Y"));
-        $form->addTextArea('message', 'Zpráva')->setRequired()
+        $form->addTextArea('message', 'Zpráva:')->setRequired()
             ->addRule(Form::MIN_LENGTH, 'Zpráva musí být minimálně %d znaků dlouhá.', 10);
         $form->addSubmit('send', 'Odeslat');
 

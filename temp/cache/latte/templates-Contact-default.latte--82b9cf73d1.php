@@ -54,7 +54,7 @@ final class Template82b9cf73d1 extends Latte\Runtime\Template
 		extract($ʟ_args);
 		unset($ʟ_args);
 		echo '<div class="content">
-    <p>Kontaktujte nás odesláním formuláře níže.</p>
+    <h1>Kontaktujte nás odesláním formuláře níže.</h1>
 ';
 		/* line 7 */ $_tmp = $this->global->uiControl->getComponent("contactForm");
 		if ($_tmp instanceof Nette\Application\UI\Renderable) $_tmp->redrawControl(null, false);
