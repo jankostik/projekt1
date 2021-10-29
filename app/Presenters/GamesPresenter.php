@@ -42,8 +42,9 @@ class GamesPresenter extends BasePresenter
                     
                 } 
                 else{
+                    $category = $this->databaseFunctions->getCategoryById($values->category_id);
                     $this->flashMessage("hra byla upravena");
-                    $this->redirect('Games:show', $values->game_url );
+                    $this->redirect('Games:show', $values->game_url, $category->category_title );
                 }
             };
 
@@ -76,5 +77,5 @@ class GamesPresenter extends BasePresenter
     }
 
 
-    
+
 }
