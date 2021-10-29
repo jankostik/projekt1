@@ -1,6 +1,26 @@
 {{block content}
 <div class="content">
 <h1>Vytvoření nové hry:</h1>
+    
+
  {control gameForm}
+
+    <script type="text/javascript">
+    
+    
+        $(document).ready(function () {
+           $("#frm-gameForm-game_title").keyup(function() {
+               var query = $("#frm-gameForm-game_title").val();
+
+               if (query.length > 2) {
+                   naja.makeRequest('POST', {link Games:search}, {
+                       id:query
+                   });
+               }
+           });
+        });
+    </script>
+
 </div>
-{/block}}
+{/block}
+//#frm-gameForm-game_title

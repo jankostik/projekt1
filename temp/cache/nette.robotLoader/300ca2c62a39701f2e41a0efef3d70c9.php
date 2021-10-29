@@ -20,12 +20,12 @@ return array (
     'App\\Model\\DatabaseFunctions' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/DatabaseFunctions.php',
-      1 => 1635143310,
+      1 => 1635226900,
     ),
     'App\\Model\\Data\\GameFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/Data/GameFormFactory.php',
-      1 => 1634983712,
+      1 => 1635492302,
     ),
     'App\\Model\\Data\\FormFactory' => 
     array (
@@ -35,7 +35,7 @@ return array (
     'App\\Model\\Data\\CategoryFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/Data/CategoryFormFactory.php',
-      1 => 1634983712,
+      1 => 1635278144,
     ),
     'App\\Bootstrap' => 
     array (
@@ -70,7 +70,7 @@ return array (
     'App\\Presenters\\ContactPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/ContactPresenter.php',
-      1 => 1634987250,
+      1 => 1635275369,
     ),
     'App\\Presenters\\ErrorPresenter' => 
     array (
@@ -85,12 +85,7 @@ return array (
     'App\\Presenters\\Traits\\Menu' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/Traits/Menu.php',
-      1 => 1634983712,
-    ),
-    'App\\Presenters\\Traits\\ContactForm' => 
-    array (
-      0 => '/var/www/sites/Nette/projekt1/app/Presenters/Traits/ContactForm.php',
-      1 => 1634983712,
+      1 => 1635492123,
     ),
     'App\\Presenters\\Error4xxPresenter' => 
     array (
@@ -100,12 +95,12 @@ return array (
     'App\\Presenters\\BasePresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/BasePresenter.php',
-      1 => 1634983712,
+      1 => 1635493601,
     ),
     'App\\Presenters\\GamesPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/GamesPresenter.php',
-      1 => 1635226437,
+      1 => 1635492009,
     ),
   ),
   1 => 
@@ -138,6 +133,8 @@ return array (
     'App\\Presenters\\AdministrationRegisterTemplate' => 3,
     'App\\Presenters\\GamesRemoveTemplate' => 3,
     'App\\Presenters\\GaPresenter' => 2,
+    'App\\Presenters\\GamePresenter' => 2,
+    'App\\PresentersModule\\Presenters\\GamesPresenter' => 1,
   ),
   2 => 
   array (

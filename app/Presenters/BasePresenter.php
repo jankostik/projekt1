@@ -42,5 +42,12 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
             $this->redirect('Administration:login');
         }
     }
+
+
+    public function handleSearch ($query)
+    {
+        $this->data = $query;
+        dump($this->data);
+    }
 }
 

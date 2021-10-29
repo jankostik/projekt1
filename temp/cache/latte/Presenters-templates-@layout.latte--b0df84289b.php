@@ -99,26 +99,31 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 		</div>
 	</nav>
 	</header>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+	crossorigin="anonymous">
+	</script>
 	
 ';
 		$iterations = 0;
-		foreach ($flashes as $flash) /* line 56 */ {
+		foreach ($flashes as $flash) /* line 61 */ {
 			echo '		<div';
-			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 56 */;
+			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 61 */;
 			echo '>';
-			echo LR\Filters::escapeHtmlText($flash->message) /* line 56 */;
+			echo LR\Filters::escapeHtmlText($flash->message) /* line 61 */;
 			echo '</div>
 ';
 			$iterations++;
 		}
 		echo '		<div class="max-width">
 ';
-		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 58 */;
+		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 63 */;
 		echo '		</div>
 	
 
 ';
-		$this->renderBlock('scripts', get_defined_vars()) /* line 62 */;
+		$this->renderBlock('scripts', get_defined_vars()) /* line 67 */;
 		echo '
 </body>
 </html>
@@ -131,7 +136,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['item' => '39', 'flash' => '56'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['item' => '39', 'flash' => '61'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -147,16 +152,15 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	}
 
 
-	/** {block scripts} on line 62 */
+	/** {block scripts} on line 67 */
 	public function blockScripts(array $ʟ_args): void
 	{
 		extract($this->params);
 		extract($ʟ_args);
 		unset($ʟ_args);
-		echo '	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+		echo '	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 	<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 65 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 69 */;
 		echo '/js/main.js"></script>
 ';
 	}
