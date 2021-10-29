@@ -75,4 +75,6 @@ class GamesPresenter extends BasePresenter
         $this->redirect('Games:list', $category_id, $category->category_title);
     }
 
+
+    
 }

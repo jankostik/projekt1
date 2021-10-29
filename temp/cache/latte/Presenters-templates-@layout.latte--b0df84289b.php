@@ -105,25 +105,26 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	crossorigin="anonymous">
 	</script>
 	
+	
 ';
 		$iterations = 0;
-		foreach ($flashes as $flash) /* line 61 */ {
+		foreach ($flashes as $flash) /* line 62 */ {
 			echo '		<div';
-			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 61 */;
+			echo ($ʟ_tmp = array_filter(['alert', 'alert-' . $flash->type])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 62 */;
 			echo '>';
-			echo LR\Filters::escapeHtmlText($flash->message) /* line 61 */;
+			echo LR\Filters::escapeHtmlText($flash->message) /* line 62 */;
 			echo '</div>
 ';
 			$iterations++;
 		}
 		echo '		<div class="max-width">
 ';
-		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 63 */;
+		$this->renderBlock($ʟ_nm = 'content', [], 'html') /* line 64 */;
 		echo '		</div>
 	
 
 ';
-		$this->renderBlock('scripts', get_defined_vars()) /* line 67 */;
+		$this->renderBlock('scripts', get_defined_vars()) /* line 68 */;
 		echo '
 </body>
 </html>
@@ -136,7 +137,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['item' => '39', 'flash' => '61'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['item' => '39', 'flash' => '62'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -152,7 +153,7 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 	}
 
 
-	/** {block scripts} on line 67 */
+	/** {block scripts} on line 68 */
 	public function blockScripts(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -160,8 +161,12 @@ final class Templateb0df84289b extends Latte\Runtime\Template
 		unset($ʟ_args);
 		echo '	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 	<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 69 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 70 */;
 		echo '/js/main.js"></script>
+	<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 71 */;
+		echo '/js/naja.js"></script>
+	
 ';
 	}
 
