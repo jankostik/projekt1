@@ -56,9 +56,9 @@ class GamesPresenter extends BasePresenter
 
 
     /**funkce pro vykreslováni obsahu */
-    public function renderList($category_url, $category_title)
+    public function renderList($category_id, $category_title)
     {
-        $this->template->gamesList = $this->databaseFunctions->getGamesByCategory($category_url);
+        $this->template->gamesList = $this->databaseFunctions->getGamesByCategory($category_id);
         $this->template->category_title = $category_title;
     }
 
