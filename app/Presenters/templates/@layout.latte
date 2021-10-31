@@ -37,7 +37,7 @@
 							<button class="dropbtn">Kategorie</button>
 							<div class="dropdown-content">
 								<li n:foreach="$menu as $item">
-									<a n:href="Games:list $item->category_id, $item->category_title">{$item->category_title}</a>
+									<a n:href="Games:list $item->category_id">{$item->category_title}</a>
 									{if $user->isInRole('admin')}
 									<a class="editC" n:href="Administration:editC $item->category_url"> - upravit kategorii</a>
 									{/if}

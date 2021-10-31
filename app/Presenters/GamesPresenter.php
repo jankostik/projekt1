@@ -14,6 +14,7 @@ class GamesPresenter extends BasePresenter
 
     /** @var GameFormFactory @inject */
 	public $gameFormFactory;
+    
 
     public function actionNew()
     {
@@ -56,16 +57,18 @@ class GamesPresenter extends BasePresenter
 
 
     /**funkce pro vykreslováni obsahu */
-    public function renderList($category_id, $category_title)
+    public function renderList($category_id)
     {
-        $this->template->gamesList = $this->databaseFunctions->getGamesByCategory($category_id);
-        $this->template->category_title = $category_title;
+        $category = $this->databaseFunctions->getCategoryById($category_id);
+        $this->template->gamesList = $this->databaseFunctions->getGamesByCategory($category->category_id);
+        $this->template->category_title = $category->category_title;
     }
 
-    public function renderShow($game_url, $category_title)
+    public function renderShow($category_id, $game_url)
     {
         $this->template->game = $this->databaseFunctions->getGame($game_url);
-        $this->template->category_title = $category_title;
+        $category = $this->databaseFunctions->getCategoryById($category_id);
+        $this->template->category_title = $category->category_title;
     }
     //až vše bude fungovat tak, ať je možnost i mazaz a upravovat kategorie
     public function actionRemove(string $url = null, $category_id)

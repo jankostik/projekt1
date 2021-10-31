@@ -41,6 +41,9 @@ final class RouterFactory
 					]
 				]
 		]);
+
+		$router->addRoute('kategorie/<category_id>', 'Games:list');
+		$router->addRoute('kategorie/<category_id>/hra/<game_url>', 'Games:show');
 	
 		
 

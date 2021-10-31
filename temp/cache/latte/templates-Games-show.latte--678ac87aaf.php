@@ -51,7 +51,7 @@ final class Template678ac87aaf extends Latte\Runtime\Template
 		echo '</strong>
     </div>
 <a class="zpet" href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$game->category_id, $category_title])) /* line 9 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:list", [$game->category_id])) /* line 9 */;
 		echo '">zpět</a>
 </div>
 
