@@ -64,11 +64,10 @@ class GamesPresenter extends BasePresenter
         $this->template->category_title = $category->category_title;
     }
 
-    public function renderShow($category_id, $game_url)
+    public function renderShow($game_url, $category_id)
     {
         $this->template->game = $this->databaseFunctions->getGame($game_url);
-        $category = $this->databaseFunctions->getCategoryById($category_id);
-        $this->template->category_title = $category->category_title;
+       
     }
     //až vše bude fungovat tak, ať je možnost i mazaz a upravovat kategorie
     public function actionRemove(string $url = null, $category_id)
@@ -76,7 +75,7 @@ class GamesPresenter extends BasePresenter
         $this->databaseFunctions->removeGame($url);
         $category = $this->databaseFunctions->getCategoryById($category_id);
         $this->flashMessage('Hra Byla úspěšně odstraněna');
-        $this->redirect('Games:list', $category_id, $category->category_title);
+        $this->redirect('Games:list', $category_id);
     }
 
 
