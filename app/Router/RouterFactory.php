@@ -12,6 +12,7 @@ use Nette\Application\Routers\RouteList;
 final class RouterFactory
 {
 	use Nette\StaticClass;
+	
 
 	public static function createRouter(): RouteList
 	{
@@ -31,6 +32,7 @@ final class RouterFactory
 			]
 		]);
 
+
 		$router->addRoute('<action>[<category_id>]', [
 			'presenter' => 'Games',
 			'action' => [
@@ -42,10 +44,9 @@ final class RouterFactory
 				]
 		]);
 
+
 		$router->addRoute('kategorie/<category_id>', 'Games:list');
 		$router->addRoute('kategorie/<category_id>/hra/<game_url>', 'Games:show');
-	
-		
 
 		$router->addRoute('<presenter>/<action>', 'Games:default');
 		return $router;

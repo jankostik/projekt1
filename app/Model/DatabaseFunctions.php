@@ -14,6 +14,7 @@ use Nette\Database\Table\ActiveRow;
 use Nette\Database\Table\Selection;
 use Nette\Utils\ArrayHash;
 
+
 class DatabaseFunctions extends DatabaseManager
 {
     const 
@@ -41,6 +42,8 @@ class DatabaseFunctions extends DatabaseManager
         return $this->database->table(self::GAME_TABLE)->where(self::GAME_URL, $url)->fetch();
     }
 
+
+    //získá hry pomocí category_id
     public function getGamesByCategory($category_id)
     {
         return $this->database->table(self::GAME_TABLE)->where(self::CATEGORY_ID, $category_id);
@@ -53,10 +56,13 @@ class DatabaseFunctions extends DatabaseManager
         $this->database->table(self::GAME_TABLE)->insert($games);
     }
 
+
+    //úprava hry
     public function editGame(ArrayHash $games)
     {
         $this->database->table(self::GAME_TABLE)->where(self::GAME_ID, $games[self::GAME_ID])->update($games);
     }
+
 
     //vymaže hru
     public function removeGame(string $url)
@@ -64,38 +70,51 @@ class DatabaseFunctions extends DatabaseManager
         $this->database->table(self::GAME_TABLE)->where(self::GAME_URL, $url)->delete();
     }
 
+
     //získá všechny kategorie z tabulky
     public function getCategories()
     {
         return $this->database->table(self::CATEGORY_TABLE)->order(self::CATEGORY_URL);
     }
 
+
+    //získá pole kategorií pro select ve formuláři pro vytvoření/úpravu 
     public function getCategoriesAssoc()
     {
         return $this->getcategories()->fetchAssoc('category_id=category_url');
     }
 
+
+    //uloží kategorii
     public function saveCategory($category)
     {
         $this->database->table(self::CATEGORY_TABLE)->insert($category);
     }
 
+
+    //upraví kategorii
     public function editCategory(ArrayHash $category)
     {
         //$this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_URL, $category[self::CATEGORY_URL])->update($category);
         $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_ID, $category[self::CATEGORY_ID])->update($category);
     }
 
+
+    //získá kategorii pomocí url
     public function getCategory($url)
     {
         return $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_URL, $url)->fetch();
     }
 
+
+    //získá kategorii pomocí category_id
     public function getCategoryById ($category_id)
     {
         return $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_ID, $category_id)->fetch();
     }
 
+
+    //změní roli uživateli member => admin
     public function changeRole($user_id){
         return $this->database->table('user')->where('user_id', $user_id)->update(['role' => 'admin']);
     }

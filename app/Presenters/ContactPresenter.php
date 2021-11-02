@@ -12,6 +12,7 @@ use Nette\Mail\SendException;
 use Nette\Utils\ArrayHash;
 use App\Model\DatabaseFunctions;
 
+
 class ContactPresenter extends BasePresenter
 {
 
@@ -28,7 +29,6 @@ class ContactPresenter extends BasePresenter
     }
 
    
-
     protected function createComponentContactForm()
     {
         $form = new Form;

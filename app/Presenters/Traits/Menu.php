@@ -6,6 +6,7 @@ namespace App\Presenters\Traits;
 
 use App\Model\DatabaseFunctions;
 
+
 trait Menu
 {
     
@@ -16,6 +17,8 @@ trait Menu
         $this->databaseFunctions = $databaseFunctions;
     }
 
+
+    //vyrenderuje menu
     protected function beforeRender()
 	{
 		$this->template->menu = $this->databaseFunctions->getCategories();

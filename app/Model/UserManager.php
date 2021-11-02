@@ -39,12 +39,7 @@ final class UserManager implements Nette\Security\Authenticator
         $this->passwords = $passwords;
     }
 
-    /**
-     * Přihlásí uživatele do systému.
-     * @param array $credentials přihlašovací údaje uživatele (jméno a heslo)
-     * @return Nette\Security\IIdentity Vrací identitu přihlášeného uživatele pro další manipulaci
-     * @throws Nette\Security\AuthenticationException Jestliže došlo k chybě při přihlášení, např. špatné heslo nebo uživatelské jméno.
-     */
+     
     public function authenticate(string $username, string $password): Nette\Security\IIdentity
     {
         // Najde a vrátí první záznam uživatele s daným jménem v databázi nebo false, pokud takový uživatel neexistuje.
@@ -74,13 +69,8 @@ final class UserManager implements Nette\Security\Authenticator
         return new Nette\Security\SimpleIdentity($row[self::COLUMN_ID], $row[self::COLUMN_ROLE], $arr);
     }
 
-    /**
-     * Registruje/přidá nového uživatele do systému.
-     * @param string $username uživatelské jméno
-     * @param string $email email
-     * @param string $password heslo
-     * @throws DuplicateNameException|Nette\Utils\AssertionException Jestliže uživatel s daným jménem již existuje.
-     */
+  
+     
     public function add(string $username, string $email, string $password): void
     {
         Nette\Utils\Validators::assert($email, 'email');
@@ -99,10 +89,7 @@ final class UserManager implements Nette\Security\Authenticator
 }
 
 
-/**
- * Výjimka pro duplicitní uživatelské jméno.
- * @package App\Model
- */
+
 class DuplicateNameException extends \Exception
 {
     // Nastavení výchozí chybové zprávy.

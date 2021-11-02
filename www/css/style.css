@@ -174,7 +174,7 @@ p{
 
 .container a {
 	font-size: 20px;
-	color: black;
+	color: rgb(45, 92, 28);
 	font-weight: 500;
 	text-decoration: none;
 }
@@ -288,4 +288,16 @@ th label {
 
 .tajny:hover{
 	color: rgb(255, 255, 255);
+}
+
+.login-oznameni{
+	font-size: 15px;
+}
+
+span{
+	font-size: 25px;
+}
+
+.container a .register-oznameni{
+	color: rgb(103, 175, 77);
 }

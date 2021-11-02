@@ -5,22 +5,22 @@ return array (
     'App\\Model\\UserManager' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/UserManager.php',
-      1 => 1634983712,
+      1 => 1635892609,
     ),
     'App\\Model\\DuplicateNameException' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/UserManager.php',
-      1 => 1634983712,
+      1 => 1635892609,
     ),
     'App\\Model\\DatabaseManager' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/DatabaseManager.php',
-      1 => 1633175334,
+      1 => 1635892533,
     ),
     'App\\Model\\DatabaseFunctions' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/DatabaseFunctions.php',
-      1 => 1635888483,
+      1 => 1635892516,
     ),
     'App\\Model\\Data\\GameFormFactory' => 
     array (
@@ -42,11 +42,6 @@ return array (
       0 => '/var/www/sites/Nette/projekt1/app/Bootstrap.php',
       1 => 1635871886,
     ),
-    'App\\Model\\GamesManager' => 
-    array (
-      0 => '/var/www/sites/Nette/projekt1/app/SitesModule/Module/GamesManager.php',
-      1 => 1633284833,
-    ),
     'App\\Forms\\FormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Forms/FormFactory.php',
@@ -55,22 +50,22 @@ return array (
     'App\\Forms\\SignUpFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Forms/SignUpFormFactory.php',
-      1 => 1634983712,
+      1 => 1635892267,
     ),
     'App\\Forms\\SignInFormFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Forms/SignInFormFactory.php',
-      1 => 1634983712,
+      1 => 1635892227,
     ),
     'App\\Router\\RouterFactory' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Router/RouterFactory.php',
-      1 => 1635708421,
+      1 => 1635893019,
     ),
     'App\\Presenters\\ContactPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/ContactPresenter.php',
-      1 => 1635275369,
+      1 => 1635892821,
     ),
     'App\\Presenters\\ErrorPresenter' => 
     array (
@@ -80,12 +75,12 @@ return array (
     'App\\Presenters\\AdministrationPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/AdministrationPresenter.php',
-      1 => 1635888540,
+      1 => 1635892750,
     ),
     'App\\Presenters\\Traits\\Menu' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/Traits/Menu.php',
-      1 => 1635492123,
+      1 => 1635893056,
     ),
     'App\\Presenters\\Error4xxPresenter' => 
     array (
@@ -95,12 +90,12 @@ return array (
     'App\\Presenters\\BasePresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/BasePresenter.php',
-      1 => 1635493601,
+      1 => 1635892830,
     ),
     'App\\Presenters\\GamesPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/GamesPresenter.php',
-      1 => 1635871591,
+      1 => 1635893000,
     ),
   ),
   1 => 
@@ -147,6 +142,5 @@ return array (
   ),
   2 => 
   array (
-    '/var/www/sites/Nette/projekt1/app/Model/MenuTrait.php' => 1634983712,
   ),
 );

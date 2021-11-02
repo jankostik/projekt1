@@ -7,14 +7,16 @@ namespace App\Presenters;
 use App\Model\DatabaseFunctions;
 use App\Model\Data\GameFormFactory;
 
+
 class GamesPresenter extends BasePresenter
 {
 
-    
-
     /** @var GameFormFactory @inject */
 	public $gameFormFactory;
+
     
+/******EDITECE HER ***********************************************************************************/
+
 
     public function actionNew()
     {
@@ -53,10 +55,10 @@ class GamesPresenter extends BasePresenter
     }
 
 
+    /**funkce pro vykreslováni obsahu *************************************************/
 
 
-
-    /**funkce pro vykreslováni obsahu */
+    //vyrenderuje hry podle toho do jaké kategorie patří
     public function renderList($category_id)
     {
         $category = $this->databaseFunctions->getCategoryById($category_id);
@@ -64,12 +66,16 @@ class GamesPresenter extends BasePresenter
         $this->template->category_title = $category->category_title;
     }
 
+
+    //zobrazí detaily hry
     public function renderShow($game_url, $category_id)
     {
         $this->template->game = $this->databaseFunctions->getGame($game_url);
        
     }
-    //až vše bude fungovat tak, ať je možnost i mazaz a upravovat kategorie
+
+
+    //vymaže hru
     public function actionRemove(string $url = null, $category_id)
     {
         $this->databaseFunctions->removeGame($url);
@@ -78,6 +84,8 @@ class GamesPresenter extends BasePresenter
         $this->redirect('Games:list', $category_id);
     }
 
+
+    //vyrenderuje všechny hry v databázi
     public function renderDefault()
     {
         $this->template->games = $this->databaseFunctions->getGames();

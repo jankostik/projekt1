@@ -12,6 +12,7 @@ use App\Presenters\BasePresenter;
 use Nette\Application\AbortException;
 use Nette\Application\UI\Form;
 
+
 class AdministrationPresenter extends BasePresenter
 {
 
@@ -31,22 +32,23 @@ class AdministrationPresenter extends BasePresenter
         $this->signUpFactory = $signUpFactory;
     }
 
+
+    //přihlásí uživatele
     public function actionLogin()
     {
         if ($this->getUser()->isLoggedIn()) $this->redirect('Administration:');
     }
 
-    /**
-     * Odhlásí uživatele a přesměruje na přihlašovací stránku.
-     * @throws AbortException Při přesměrování na přihlašovací stránku.
-     */
+    
+    //Odhlásí uživatele a přesměruje na přihlašovací stránku.
     public function actionLogout()
     {
         $this->getUser()->logout();
         $this->redirect('login');
     }
 
-    /** Předá jméno přihlášeného uživatele do šablony administrační stránky. */
+
+    //Předá jméno přihlášeného uživatele do šablony administrační stránky.
     public function renderDefault()
     {
 
@@ -54,10 +56,8 @@ class AdministrationPresenter extends BasePresenter
             $this->template->username = $this->user->identity->username;
     }
 
-    /**
-     * Vytváří a vrací přihlašovací formulář pomocí továrny.
-     * @return Form přihlašovací formulář
-     */
+    
+    //Vytváří a vrací přihlašovací formulář pomocí továrny.
     protected function createComponentLoginForm()
     {
         return $this->signInFactory->create(function () {
@@ -66,10 +66,8 @@ class AdministrationPresenter extends BasePresenter
         });
     }
 
-    /**
-     * Vytváří a vrací registrační formulář pomocí továrny.
-     * @return Form registrační formulář
-     */
+    
+    //Vytváří a vrací registrační formulář pomocí továrny.
     protected function createComponentRegisterForm()
     {
         return $this->signUpFactory->create(function (): void {
@@ -78,7 +76,9 @@ class AdministrationPresenter extends BasePresenter
         });
     }
 
-    /**********EDITACE KATEGORIÍ**************************************************************************** */
+
+    /**********EDITACE KATEGORIÍ******************************************************************************/
+
 
     public function actionNewC()
     {
@@ -113,6 +113,8 @@ class AdministrationPresenter extends BasePresenter
         return $form;
     }
 
+
+//změní roli uživateli member => admin
     public function actionChangeRole()
     {
         $user = $this->getUser();
