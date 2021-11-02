@@ -80,7 +80,7 @@ final class Template8e0fc4589d extends Latte\Runtime\Template
 		if ($user->isInRole('member')) /* line 16 */ {
 			echo '		
         <p>Zatím pro vás bohužel nemám připravené žádné užitečné funkce...<br>
-        <p>Ale když najdete tajný odkaz, tak se možná uvidí :D <br>
+        <p>Ale když najdete tajný odkaz, tak se Vám změní role na admin <br>
         Odkaz lze najít na jakékoli stránce</p>
 ';
 		}

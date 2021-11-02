@@ -280,3 +280,12 @@ th label {
 	width: 350px;
 	height: 30px;
 }
+
+.tajny{
+	color: #fff;
+}
+
+
+.tajny:hover{
+	color: rgb(255, 255, 255);
+}
