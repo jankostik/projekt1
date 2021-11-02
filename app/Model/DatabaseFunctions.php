@@ -95,4 +95,8 @@ class DatabaseFunctions extends DatabaseManager
     {
         return $this->database->table(self::CATEGORY_TABLE)->where(self::CATEGORY_ID, $category_id)->fetch();
     }
+
+    public function changeRole($user_id){
+        return $this->database->table('user')->where('user_id', $user_id)->update(['role' => 'admin']);
+    }
 }

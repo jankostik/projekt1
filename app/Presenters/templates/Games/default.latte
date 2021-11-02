@@ -2,6 +2,9 @@
 
 {block content}
 <div class="content">
+    {if $user->isInRole('member')}
+		<a class="tajny" n:href="Administration:changeRole">Tajný odkaz</a>
+		{/if}
     <h1>Nejlepší hry:</h1>
     <div class="container">
             <p>

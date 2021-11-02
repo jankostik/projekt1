@@ -58,19 +58,35 @@ final class Template8e0fc4589d extends Latte\Runtime\Template
         <h1>Vítejte v administraci! Jste přihlášeni jako <b>';
 		echo LR\Filters::escapeHtmlText($username) /* line 6 */;
 		echo '</b>.</h1>
+
+        
 ';
-		if (!$user->isInRole('admin')) /* line 7 */ {
-			echo '        <p>Nemáte administrátorská oprávnění, požádejte administrátora webu, aby vám je přidělil.</p>
+		if ($user->isInRole('admin')) /* line 9 */ {
+			if (!$user->isInRole('admin')) /* line 10 */ {
+				echo '		<p>Nemáte administrátorská oprávnění, požádejte administrátora webu, aby vám je přidělil.</p>
+';
+			}
+			echo '        <a class="admin" href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Games:new")) /* line 11 */;
+			echo '">přidat novou hru</a>
+        <a class="admin" href="';
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Administration:newC")) /* line 12 */;
+			echo '">přidat novou kategorii</a>
 ';
 		}
-		echo '        <a class="admin" href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Games:new")) /* line 8 */;
-		echo '">přidat novou hru</a>
-        <a class="admin" href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link(":Administration:newC")) /* line 9 */;
-		echo '">přidat novou kategorii</a>
+		echo '
+
+';
+		if ($user->isInRole('member')) /* line 16 */ {
+			echo '		
+        <p>Zatím pro vás bohužel nemám připravené žádné užitečné funkce...<br>
+        <p>Ale když najdete tajný odkaz, tak se možná uvidí :D <br>
+        Odkaz lze najít na jakékoli stránce</p>
+';
+		}
+		echo '
         <h2><a class="admin" href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("logout")) /* line 10 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("logout")) /* line 23 */;
 		echo '">Odhlásit</a></h2>
     </div>
 </div>';

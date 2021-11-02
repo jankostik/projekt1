@@ -20,7 +20,7 @@ return array (
     'App\\Model\\DatabaseFunctions' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Model/DatabaseFunctions.php',
-      1 => 1635871846,
+      1 => 1635888483,
     ),
     'App\\Model\\Data\\GameFormFactory' => 
     array (
@@ -80,7 +80,7 @@ return array (
     'App\\Presenters\\AdministrationPresenter' => 
     array (
       0 => '/var/www/sites/Nette/projekt1/app/Presenters/AdministrationPresenter.php',
-      1 => 1634983712,
+      1 => 1635888540,
     ),
     'App\\Presenters\\Traits\\Menu' => 
     array (
@@ -141,8 +141,9 @@ return array (
     'App\\Presenters\\AdministrationAdministraceTemplate' => 3,
     'App\\Presenters\\SeznamHerPresenter' => 2,
     'App\\Presenters\\SeznamHerhristePresenter' => 3,
-    'App\\Presenters\\DefaultPresenter' => 2,
+    'App\\Presenters\\DefaultPresenter' => 3,
     'App\\Presenters\\KategoriPresenter' => 2,
+    'App\\Presenters\\AdministrationChangeRoleTemplate' => 3,
   ),
   2 => 
   array (

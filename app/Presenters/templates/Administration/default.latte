@@ -4,9 +4,22 @@
 <div class="content">
     <div class="container">
         <h1>Vítejte v administraci! Jste přihlášeni jako <b>{$username}</b>.</h1>
-        <p n:if="!$user->isInRole('admin')">Nemáte administrátorská oprávnění, požádejte administrátora webu, aby vám je přidělil.</p>
+
+        
+         {if $user->isInRole('admin')}
+		<p n:if="!$user->isInRole('admin')">Nemáte administrátorská oprávnění, požádejte administrátora webu, aby vám je přidělil.</p>
         <a class="admin" n:href=:Games:new>přidat novou hru</a>
         <a class="admin" n:href=:Administration:newC>přidat novou kategorii</a>
+		{/if}
+
+
+        {if $user->isInRole('member')}
+		
+        <p>Zatím pro vás bohužel nemám připravené žádné užitečné funkce...<br>
+        <p>Ale když najdete tajný odkaz, tak se možná uvidí :D <br>
+        Odkaz lze najít na jakékoli stránce</p>
+		{/if}
+
         <h2><a class="admin" n:href=logout>Odhlásit</a></h2>
     </div>
 </div>

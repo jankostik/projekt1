@@ -51,6 +51,7 @@ services:
             - allow(guest, Contact)
             - allow(member, Administration, default)
             - allow(member, Administration, logout)
+            - allow(member, Administration, changeRole)
 
 	# Definice dalších služeb dále přístupných pomocí DI
     - App\Forms\FormFactory

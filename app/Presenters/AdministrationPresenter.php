@@ -112,4 +112,14 @@ class AdministrationPresenter extends BasePresenter
 
         return $form;
     }
+
+    public function actionChangeRole()
+    {
+        $user = $this->getUser();
+        $this->databaseFunctions->changeRole($user->getId());
+        $this->getUser()->logout();
+        $this->flashMessage("Musíte se znovu přihlásit, kvůli uložení nové role");
+        $this->redirect('Administration:default');
+        
+    }
 }

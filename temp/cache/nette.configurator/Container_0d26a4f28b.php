@@ -480,6 +480,7 @@ class Container_0d26a4f28b extends Nette\DI\Container
 		$service->allow('guest', 'Contact');
 		$service->allow('member', 'Administration', 'default');
 		$service->allow('member', 'Administration', 'logout');
+		$service->allow('member', 'Administration', 'changeRole');
 		return $service;
 	}
 
