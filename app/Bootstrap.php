@@ -28,6 +28,8 @@ class Bootstrap
 			->addConfig($appDir . '/config/common.neon')
 			->addConfig($appDir . '/config/local.neon');
 
+		//$configurator->setDebugMode(false);
+
 		return $configurator;
 	}
 

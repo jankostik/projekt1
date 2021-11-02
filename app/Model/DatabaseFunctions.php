@@ -31,7 +31,7 @@ class DatabaseFunctions extends DatabaseManager
     //získá všechny hry z tabulky
     public function getGames()
     {
-        return $this->database->table(self::GAME_TABLE)->order(self::GAME_URL . 'DESC');
+        return $this->database->table(self::GAME_TABLE)->order(self::GAME_ID . ' DESC');
     }
 
 

@@ -78,6 +78,9 @@ class GamesPresenter extends BasePresenter
         $this->redirect('Games:list', $category_id);
     }
 
-
+    public function renderDefault()
+    {
+        $this->template->games = $this->databaseFunctions->getGames();
+    }
 
 }

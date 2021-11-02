@@ -12,6 +12,7 @@ forms:
 
 application:
 	errorPresenter: Error
+	#catchExceptions: true
 	mapping:
 		*: App\*Module\Presenters\*Presenter
 

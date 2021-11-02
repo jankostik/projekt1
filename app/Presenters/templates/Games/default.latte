@@ -17,6 +17,22 @@
             - asministrace her<br>
             - přihlášení/registrace<br>
             - kontakt<br>
+            <h1>Všechny hry:</h1>
             </p>
+            <ul n:foreach="$games as $game">
+			<li><a n:href="Games:show $game->game_url, $game->category_id">{$game->game_title}</a></li>
+			<div class="line"></div>
+			<li><strong class="description">{$game->game_description}</strong></li>
+			{if $user->isInRole('admin')}
+			<div class="edit-tags">
+				<a class="edit" n:href="Games:edit $game->game_url">Upravit hru</a>
+				<a class="edit" n:href="remove $game->game_url, $game->category_id">Odstranit</a>
+			</div>
+			{/if}
+		</ul>
+		{if $user->isInRole('admin')}
+		<a class="edit" n:href="Games:new">Vytvořit novou hru</a>
+		{/if}
+		<br>
     </div>
 </div>
