@@ -120,7 +120,7 @@ class AdministrationPresenter extends BasePresenter
         $user = $this->getUser();
         $this->databaseFunctions->changeRole($user->getId());
         $this->getUser()->logout();
-        $this->flashMessage("Musíte se znovu přihlásit, kvůli uložení nové role");
+        $this->flashMessage("Výborně jste admin! Musíte se znovu přihlásit, kvůli uložení nové role.");
         $this->redirect('Administration:default');
         
     }

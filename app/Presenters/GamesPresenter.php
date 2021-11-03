@@ -72,7 +72,6 @@ class GamesPresenter extends BasePresenter
     {
         $this->template->game = $this->databaseFunctions->getGame($game_url);
         $this->template->urlType = $category_id;
-        dump($category_id);
        
     }
 
