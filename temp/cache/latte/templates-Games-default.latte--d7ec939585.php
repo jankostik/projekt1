@@ -70,7 +70,7 @@ final class Templated7ec939585 extends Latte\Runtime\Template
 		foreach ($games as $game) /* line 25 */ {
 			echo '            <ul>
 			<li><a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:show", [$game->game_url, $game->category_id])) /* line 26 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("Games:show", [$game->game_url])) /* line 26 */;
 			echo '">';
 			echo LR\Filters::escapeHtmlText($game->game_title) /* line 26 */;
 			echo '</a></li>

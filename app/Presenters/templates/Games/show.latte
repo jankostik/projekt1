@@ -6,7 +6,13 @@
         <div class="line"></div>
         <strong>{$game->game_description}</strong>
     </div>
-<a class="zpet" n:href="Games:list $game->category_id">zpět</a>
+
+	{if $urlType == null}
+		<a class="zpet" n:href="Games:default">zpět</a>
+        {else}
+        <a class="zpet" n:href="Games:list $game->category_id">zpět</a>
+        {/if}
+
 </div>
 
 {/block}}

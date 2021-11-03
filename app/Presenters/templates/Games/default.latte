@@ -23,7 +23,7 @@
             <h1>Všechny hry:</h1>
             </p>
             <ul n:foreach="$games as $game">
-			<li><a n:href="Games:show $game->game_url, $game->category_id">{$game->game_title}</a></li>
+			<li><a n:href="Games:show $game->game_url">{$game->game_title}</a></li>
 			<div class="line"></div>
 			<li><strong class="description">{$game->game_description}</strong></li>
 			{if $user->isInRole('admin')}
