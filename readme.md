@@ -39,7 +39,8 @@ should be ready to go.
 It is CRITICAL that whole `app/`, `config`, `log/` and `temp/` directories are not accessible directly
 via a web browser. See [security warning](https://nette.org/security-warning).
 
-
+Ještě jsem přidal složku sql kde najdete příkazy pro vytvoření databáze.
+-----------------------------------------------------------------------
 Requirements
 ------------
 
